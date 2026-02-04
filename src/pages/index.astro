@@ -1,0 +1,443 @@
+---
+const features = [
+  {
+    icon: 'message-circle',
+    title: 'AI Trener Rozmów',
+    description: 'Trenuj rozmowy sprzedażowe z AI. Symulacje różnych scenariuszy: trudny klient, negocjacje ceny, pierwszy kontakt.'
+  },
+  {
+    icon: 'mail',
+    title: 'Automatyczne E-maile',
+    description: 'Wysyłaj spersonalizowane oferty i follow-upy. AI pisze maile które odpowiadają.'
+  },
+  {
+    icon: 'mic',
+    title: 'Voice Notes',
+    description: 'Dyktuj notatki po spotkaniu. AI transkrybuje i organizuje w CRM.'
+  },
+  {
+    icon: 'search',
+    title: 'Skaner Ofert',
+    description: 'Automatycznie wyszukuj nowe nieruchomości z OLX, Otodom, Gratka.'
+  },
+  {
+    icon: 'file-text',
+    title: 'Raporty Cenowe',
+    description: 'Generuj profesjonalne raporty PDF z analizą rynku dla klientów.'
+  },
+  {
+    icon: 'users',
+    title: 'Smart CRM',
+    description: 'Baza klientów która myśli. Przypomnienia, segmentacja, historia kontaktu.'
+  }
+];
+
+const pricing = [
+  {
+    name: 'Starter',
+    price: '149',
+    period: 'miesięcznie',
+    description: 'Dla pojedynczego agenta',
+    features: [
+      'AI Trener rozmów',
+      '100 e-maili/mies',
+      'Baza 500 klientów',
+      'Voice notes',
+      'Podstawowe raporty'
+    ],
+    cta: 'Rozpocznij za darmo',
+    popular: false
+  },
+  {
+    name: 'Pro',
+    price: '299',
+    period: 'miesięcznie',
+    description: 'Dla profesjonalistów',
+    features: [
+      'Wszystko ze Starter',
+      'Nielimitowane e-maile',
+      'Skaner ofert',
+      'Zaawansowane raporty',
+      'Priority support'
+    ],
+    cta: 'Wybierz Pro',
+    popular: true
+  },
+  {
+    name: 'Agency',
+    price: '799',
+    period: 'miesięcznie',
+    description: 'Dla całych biur',
+    features: [
+      'Wszystko z Pro',
+      'Nielimitowani agenci',
+      'White-label',
+      'API access',
+      'Dedykowany support'
+    ],
+    cta: 'Kontakt',
+    popular: false
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PośrednikAI — Twój AI Asystent w Nieruchomościach</title>
+    <meta name="description" content="AI trener rozmów, automatyczne e-maile, CRM i skaner ofert dla pośredników nieruchomości. Zwiększ sprzedaż o 40%." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="font-sans antialiased bg-white text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-sm">P</span>
+            </div>
+            <span class="font-semibold text-lg">PośrednikAI</span>
+          </div>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#funkcje" class="text-sm text-gray-600 hover:text-gray-900 transition">Funkcje</a>
+            <a href="#cennik" class="text-sm text-gray-600 hover:text-gray-900 transition">Cennik</a>
+            <a href="#faq" class="text-sm text-gray-600 hover:text-gray-900 transition">FAQ</a>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="#cennik" class="hidden sm:inline-flex text-sm font-medium text-gray-900 hover:text-blue-600 transition">Zaloguj</a>
+            <a href="#cennik" class="inline-flex items-center px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition">
+              Wypróbuj za darmo
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 opacity-70"></div>
+      <div class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+      <div class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full mb-6">
+            <span class="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse"></span>
+            Nowość: AI Trener Rozmów już dostępny
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
+            Twój <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">AI Asystent</span><br />
+            w Nieruchomościach
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Trenuj rozmowy sprzedażowe, automatyzuj e-maile i zarządzaj klientami. 
+            Zwiększ sprzedaż o <span class="font-semibold text-gray-900">40%</span> z pomocą sztucznej inteligencji.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#cennik" class="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white font-medium rounded-xl hover:bg-gray-800 transition shadow-lg shadow-gray-900/20">
+              Rozpocznij za darmo
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#demo" class="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 font-medium rounded-xl border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition">
+              Zobacz demo
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-gray-500">14 dni za darmo • Bez karty • Anuluj w każdej chwili</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-gray-50 border-y border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-gray-900">40%</div>
+            <div class="text-sm text-gray-600 mt-1">Więcej sprzedaży</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-gray-900">500+</div>
+            <div class="text-sm text-gray-600 mt-1">Aktywnych agentów</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-gray-900">10h</div>
+            <div class="text-sm text-gray-600 mt-1">Oszczędności tygodniowo</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-gray-900">4.9/5</div>
+            <div class="text-sm text-gray-600 mt-1">Ocena użytkowników</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="funkcje" class="py-20 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Wszystko czego potrzebujesz
+          </h2>
+          <p class="text-lg text-gray-600">
+            Kompletny zestaw narzędzi AI które pomogą Ci sprzedawać więcej i szybciej.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div class="group p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {feature.icon === 'message-circle' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>}
+                  {feature.icon === 'mail' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>}
+                  {feature.icon === 'mic' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>}
+                  {feature.icon === 'search' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>}
+                  {feature.icon === 'file-text' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>}
+                  {feature.icon === 'users' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>}
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              Trenuj rozmowy bez stresu
+            </h2>
+            <p class="text-lg text-gray-600 mb-6">
+              Nigdy więcej stresu przed trudnym klientem. AI symuluje różne scenariusze i daje Ci 
+              natychmiastowy feedback. Ćwicz w domu, poprawiaj technikę, zwiększaj skuteczność.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-gray-700">Scenariusze: trudny klient, negocjacje, pierwszy kontakt</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-gray-700">Natychmiastowy feedback i wskazówki</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-gray-700">Śledzenie postępów w czasie</span>
+              </li>
+            </ul>
+            <a href="#cennik" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-xl hover:bg-gray-800 transition">
+              Rozpocznij trening
+            </a>
+          </div>
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl blur-2xl opacity-20"></div>
+            <div class="relative bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
+              <div class="flex items-center gap-3 mb-4 pb-4 border-b border-gray-100">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-semibold">AI</div>
+                <div>
+                  <div class="font-medium text-gray-900">AI Trener</div>
+                  <div class="text-xs text-gray-500">Scenariusz: Negocjacje ceny</div>
+                </div>
+              </div>
+              <div class="space-y-3 text-sm">
+                <div class="flex gap-3">
+                  <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-xs flex-shrink-0">AI</div>
+                  <div class="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-2 text-gray-700">
+                    Dzień dobry, widzę że państwa mieszkanie jest na sprzedaż. Mogę zapytać o cenę?
+                  </div>
+                </div>
+                <div class="flex gap-3 justify-end">
+                  <div class="bg-blue-600 rounded-2xl rounded-tr-sm px-4 py-2 text-white">
+                    Tak, cena to 450 000 zł. Jestem otwarty na negocjacje.
+                  </div>
+                  <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-xs flex-shrink-0">Ty</div>
+                </div>
+                <div class="flex gap-3">
+                  <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-xs flex-shrink-0">AI</div>
+                  <div class="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-2 text-gray-700">
+                    To dość wysoka cena jak na ten metraż. Widziałem podobne mieszkania za 400 000.
+                  </div>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
+                  <strong>💡 Wskazówka:</strong> Nie obniżaj ceny od razu. Zapytaj co konkretnie widział klient i porównaj lokalizację.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="cennik" class="py-20 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Prosty, transparentny cennik
+          </h2>
+          <p class="text-lg text-gray-600">
+            Wybierz plan który pasuje do Twoich potrzeb. Zawsze możesz zmienić lub anulować.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {pricing.map((plan, index) => (
+            <div class={`relative p-6 rounded-2xl border ${plan.popular ? 'border-blue-500 shadow-xl shadow-blue-500/10' : 'border-gray-200'} bg-white`}>
+              {plan.popular && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span class="px-3 py-1 bg-blue-600 text-white text-xs font-medium rounded-full">Najpopularniejszy</span>
+                </div>
+              )}
+              <div class="text-center mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{plan.name}</h3>
+                <p class="text-sm text-gray-500 mb-4">{plan.description}</p>
+                <div class="flex items-baseline justify-center gap-1">
+                  <span class="text-4xl font-bold text-gray-900">{plan.price}</span>
+                  <span class="text-gray-500">zł</span>
+                </div>
+                <span class="text-sm text-gray-500">/{plan.period}</span>
+              </div>
+              <ul class="space-y-3 mb-6">
+                {plan.features.map((feature, i) => (
+                  <li class="flex items-start gap-3 text-sm">
+                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span class="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button class={`w-full py-3 px-4 rounded-xl font-medium transition ${plan.popular ? 'bg-gray-900 text-white hover:bg-gray-800' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'}`}>
+                {plan.cta}
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Często zadawane pytania</h2>
+        </div>
+        <div class="space-y-4">
+          {[
+            {
+              q: 'Czy muszę podawać kartę kredytową na start?',
+              a: 'Nie. Dostajesz 14 dni za darmo bez żadnych zobowiązań. Karta jest potrzebna dopiero po okresie próbnym, jeśli zdecydujesz się zostać.'
+            },
+            {
+              q: 'Jak działa AI Trener rozmów?',
+              a: 'AI symuluje różne scenariusze rozmów z klientami. Możesz ćwiczyć na różnych poziomach trudności i otrzymujesz natychmiastowy feedback ze wskazówkami jak poprawić technikę sprzedaży.'
+            },
+            {
+              q: 'Czy mogę importować dane z innego CRM?',
+              a: 'Tak, oferujemy import z najpopularniejszych CRM-ów: ASARI, IMO, EstiCRM. Wystarczy wyeksportować dane do CSV i zaimportować w naszym panelu.'
+            },
+            {
+              q: 'Czy moje dane są bezpieczne?',
+              a: 'Absolutnie. Wszystkie dane są szyfrowane (SSL/TLS), przechowywane na serwerach w UE (zgodnie z RODO) i regularnie backupowane. Nikt oprócz Ciebie nie ma dostępu do Twoich danych.'
+            },
+            {
+              q: 'Co jeśli nie będę zadowolony?',
+              a: 'Masz 14 dni na bezpłatne wypróbowanie. Jeśli zdecydujesz się odejść, możesz anulować subskrypcję w dowolnym momencie bez żadnych kar.'
+            }
+          ].map((item, i) => (
+            <div class="bg-white rounded-xl p-6 border border-gray-200">
+              <h3 class="font-semibold text-gray-900 mb-2">{item.q}</h3>
+              <p class="text-gray-600 text-sm">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 sm:p-12 text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Gotowy na więcej sprzedaży?
+          </h2>
+          <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">
+            Dołącz do 500+ agentów którzy już korzystają z PośrednikAI i zwiększają swoje wyniki.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#cennik" class="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-xl hover:bg-gray-100 transition">
+              Wypróbuj za darmo
+            </a>
+            <a href="#demo" class="inline-flex items-center justify-center px-8 py-4 bg-gray-800 text-white font-medium rounded-xl border border-gray-700 hover:bg-gray-700 transition">
+              Umów demo
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-gray-400">14 dni za darmo • Bez karty • Anuluj w każdej chwili</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold text-sm">P</span>
+              </div>
+              <span class="font-semibold">PośrednikAI</span>
+            </div>
+            <p class="text-sm text-gray-600">
+              AI-asystent dla pośredników nieruchomości. Trenuj rozmowy, automatyzuj procesy, sprzedawaj więcej.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-medium text-gray-900 mb-4">Produkt</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><a href="#funkcje" class="hover:text-gray-900">Funkcje</a></li>
+              <li><a href="#cennik" class="hover:text-gray-900">Cennik</a></li>
+              <li><a href="#" class="hover:text-gray-900">Aktualizacje</a></li>
+              <li><a href="#" class="hover:text-gray-900">API</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-medium text-gray-900 mb-4">Firma</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><a href="#" class="hover:text-gray-900">O nas</a></li>
+              <li><a href="#" class="hover:text-gray-900">Blog</a></li>
+              <li><a href="#" class="hover:text-gray-900">Kariera</a></li>
+              <li><a href="#" class="hover:text-gray-900">Kontakt</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-medium text-gray-900 mb-4">Pomoc</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><a href="#" class="hover:text-gray-900">Centrum pomocy</a></li>
+              <li><a href="#" class="hover:text-gray-900">Dokumentacja</a></li>
+              <li><a href="#" class="hover:text-gray-900">Status systemu</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p class="text-sm text-gray-500">
+            © 2025 PośrednikAI. Wszelkie prawa zastrzeżone.
+          </p>
+          <div class="flex gap-6 text-sm text-gray-500">
+            <a href="#" class="hover:text-gray-900">Polityka prywatności</a>
+            <a href="#" class="hover:text-gray-900">Regulamin</a>
+            <a href="#" class="hover:text-gray-900">RODO</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
