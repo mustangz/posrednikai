@@ -6,8 +6,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agentivo — AI Asystent dla Pośredników Nieruchomości | Już Wkrótce</title>
-    <meta name="description" content="AI trener rozmów, automatyczne e-maile, CRM i skaner ofert dla pośredników nieruchomości. Zapisz się i zyskaj dostęp jako pierwszy." />
+    <title>Agentivo — Zamykaj 40% więcej transakcji | AI dla Pośredników</title>
+    <meta name="description" content="Przestań tracić czas na rutynę. AI Trener, Smart Maile, Skaner Ofert — zamknij więcej transakcji bez dodatkowej pracy. Dołącz do 127 pośredników na liście." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -18,8 +18,8 @@
         font-family: 'Inter', system-ui, sans-serif;
         background: #0a0a12;
         color: white;
-        min-height: 100vh;
         overflow-x: hidden;
+        line-height: 1.6;
       }
       
       /* Animated background */
@@ -34,14 +34,15 @@
       .orb {
         position: absolute;
         border-radius: 50%;
-        filter: blur(80px);
+        filter: blur(100px);
         mix-blend-mode: screen;
+        opacity: 0.6;
       }
       
       .orb-1 {
         width: 600px;
         height: 600px;
-        background: rgba(139, 92, 246, 0.3);
+        background: rgba(139, 92, 246, 0.25);
         top: -200px;
         left: -200px;
         animation: float 8s ease-in-out infinite;
@@ -50,8 +51,8 @@
       .orb-2 {
         width: 500px;
         height: 500px;
-        background: rgba(59, 130, 246, 0.25);
-        top: 30%;
+        background: rgba(59, 130, 246, 0.2);
+        top: 50%;
         right: -150px;
         animation: float 10s ease-in-out infinite reverse;
       }
@@ -59,19 +60,10 @@
       .orb-3 {
         width: 400px;
         height: 400px;
-        background: rgba(236, 72, 153, 0.2);
-        bottom: -100px;
-        left: 30%;
+        background: rgba(236, 72, 153, 0.15);
+        bottom: 20%;
+        left: 20%;
         animation: float 12s ease-in-out infinite;
-      }
-      
-      .orb-4 {
-        width: 300px;
-        height: 300px;
-        background: rgba(34, 211, 238, 0.15);
-        top: 60%;
-        left: 10%;
-        animation: float 9s ease-in-out infinite reverse;
       }
       
       @keyframes float {
@@ -83,87 +75,79 @@
         position: absolute;
         inset: 0;
         background-image: 
-          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+          linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
         background-size: 80px 80px;
       }
       
-      /* Main container */
-      .container {
+      /* Layout */
+      .content {
         position: relative;
         z-index: 10;
+      }
+      
+      .section {
+        padding: 6rem 1.5rem;
+      }
+      
+      @media (min-width: 768px) {
+        .section {
+          padding: 8rem 2rem;
+        }
+      }
+      
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      
+      /* ========== HERO ========== */
+      .hero {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        padding: 2rem;
         text-align: center;
+        padding-top: 4rem;
       }
       
       /* Logo */
       .logo {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 0.75rem;
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
         animation: fadeInDown 0.8s ease-out;
       }
       
       .logo-icon {
-        width: 56px;
-        height: 56px;
+        width: 48px;
+        height: 48px;
         background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
-        border-radius: 16px;
+        border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: 800;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
       }
       
       .logo-text {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         font-weight: 800;
         letter-spacing: -0.02em;
       }
       
-      /* Badge */
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        background: rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.3);
-        border-radius: 100px;
-        font-size: 0.875rem;
-        color: #c4b5fd;
-        margin-bottom: 2rem;
-        animation: fadeInUp 0.8s ease-out 0.1s both;
-      }
-      
-      .badge-dot {
-        width: 8px;
-        height: 8px;
-        background: #8b5cf6;
-        border-radius: 50%;
-        animation: pulse 2s infinite;
-      }
-      
-      @keyframes pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.5; transform: scale(1.2); }
-      }
-      
       /* Headline */
-      h1 {
-        font-size: clamp(2.5rem, 8vw, 5rem);
+      .hero h1 {
+        font-size: clamp(2.25rem, 6vw, 4rem);
         font-weight: 900;
         line-height: 1.1;
         margin-bottom: 1.5rem;
-        animation: fadeInUp 0.8s ease-out 0.2s both;
+        letter-spacing: -0.03em;
+        animation: fadeInUp 0.8s ease-out 0.1s both;
       }
       
       .gradient-text {
@@ -173,21 +157,388 @@
         background-clip: text;
       }
       
-      /* Subheadline */
-      .subtitle {
-        font-size: clamp(1rem, 2.5vw, 1.25rem);
+      .hero-subtitle {
+        font-size: clamp(1.125rem, 2.5vw, 1.375rem);
         color: #9ca3af;
         max-width: 600px;
-        line-height: 1.7;
-        margin-bottom: 3rem;
+        margin: 0 auto 3rem;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+      
+      /* CTA Button - Primary */
+      .cta-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.125rem 2.5rem;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        border: none;
+        border-radius: 14px;
+        color: white;
+        font-size: 1.125rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
         animation: fadeInUp 0.8s ease-out 0.3s both;
+        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+      }
+      
+      .cta-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 40px rgba(139, 92, 246, 0.5);
+      }
+      
+      .cta-arrow {
+        transition: transform 0.3s;
+      }
+      
+      .cta-primary:hover .cta-arrow {
+        transform: translateX(4px);
+      }
+      
+      .cta-subtext {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        color: #6b7280;
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+      }
+      
+      .cta-subtext strong {
+        color: #10b981;
+      }
+      
+      /* ========== PROBLEM SECTION ========== */
+      .problem-section {
+        background: rgba(0, 0, 0, 0.3);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .problem-section h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+      
+      .problem-intro {
+        text-align: center;
+        color: #9ca3af;
+        font-size: 1.125rem;
+        max-width: 700px;
+        margin: 0 auto 3.5rem;
+      }
+      
+      .pain-points {
+        display: grid;
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .pain-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: rgba(239, 68, 68, 0.05);
+        border: 1px solid rgba(239, 68, 68, 0.15);
+        border-radius: 16px;
+      }
+      
+      .pain-icon {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        background: rgba(239, 68, 68, 0.15);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+      }
+      
+      .pain-content h3 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        color: #fca5a5;
+      }
+      
+      .pain-content p {
+        color: #9ca3af;
+        font-size: 0.9375rem;
+      }
+      
+      .pain-stat {
+        color: #f87171;
+        font-weight: 700;
+      }
+      
+      /* ========== SOLUTION SECTION ========== */
+      .solution-section h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+      
+      .solution-intro {
+        text-align: center;
+        color: #9ca3af;
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto 4rem;
+      }
+      
+      .solutions {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+      }
+      
+      .solution-card {
+        display: grid;
+        gap: 2rem;
+        align-items: center;
+      }
+      
+      @media (min-width: 768px) {
+        .solution-card {
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+        }
+        
+        .solution-card:nth-child(even) .solution-visual {
+          order: -1;
+        }
+      }
+      
+      .solution-content {
+        max-width: 480px;
+      }
+      
+      .solution-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #a78bfa;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      
+      .solution-label-icon {
+        font-size: 1.25rem;
+      }
+      
+      .solution-content h3 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+      
+      .solution-content p {
+        color: #9ca3af;
+        margin-bottom: 1.5rem;
+        font-size: 1.0625rem;
+      }
+      
+      .solution-result {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 1.25rem;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid rgba(16, 185, 129, 0.25);
+        border-radius: 12px;
+      }
+      
+      .result-icon {
+        width: 36px;
+        height: 36px;
+        background: rgba(16, 185, 129, 0.2);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.125rem;
+      }
+      
+      .result-text {
+        font-weight: 600;
+        color: #6ee7b7;
+      }
+      
+      .result-text span {
+        display: block;
+        font-size: 0.8125rem;
+        font-weight: 400;
+        color: #9ca3af;
+        margin-top: 0.125rem;
+      }
+      
+      .solution-visual {
+        position: relative;
+        aspect-ratio: 4/3;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(99, 102, 241, 0.05) 100%);
+        border: 1px solid rgba(139, 92, 246, 0.2);
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .visual-icon {
+        font-size: 5rem;
+        opacity: 0.3;
+      }
+      
+      .visual-mockup {
+        position: absolute;
+        inset: 1rem;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 12px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      .mockup-line {
+        height: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+      }
+      
+      .mockup-line:nth-child(1) { width: 60%; }
+      .mockup-line:nth-child(2) { width: 80%; }
+      .mockup-line:nth-child(3) { width: 45%; }
+      
+      .mockup-accent {
+        width: 100%;
+        height: 60px;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(99, 102, 241, 0.2) 100%);
+        border-radius: 8px;
+        margin-top: auto;
+      }
+      
+      /* ========== SOCIAL PROOF ========== */
+      .social-section {
+        background: rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+      
+      .social-stat {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+      
+      .social-stat .number {
+        color: #a78bfa;
+      }
+      
+      .social-subtitle {
+        color: #9ca3af;
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+      }
+      
+      .testimonials {
+        display: grid;
+        gap: 1.5rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      
+      @media (min-width: 640px) {
+        .testimonials {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      .testimonial {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        text-align: left;
+      }
+      
+      .testimonial-quote {
+        font-size: 1rem;
+        color: #d1d5db;
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+      
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      
+      .author-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.875rem;
+      }
+      
+      .author-info {
+        font-size: 0.875rem;
+      }
+      
+      .author-name {
+        font-weight: 600;
+        color: white;
+      }
+      
+      .author-role {
+        color: #6b7280;
+      }
+      
+      /* ========== FINAL CTA ========== */
+      .final-cta {
+        text-align: center;
+        padding: 8rem 2rem;
+      }
+      
+      .final-cta h2 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 900;
+        margin-bottom: 1rem;
+        letter-spacing: -0.03em;
+      }
+      
+      .final-cta-subtitle {
+        color: #9ca3af;
+        font-size: 1.25rem;
+        max-width: 550px;
+        margin: 0 auto 2.5rem;
       }
       
       /* Form */
-      .form-container {
-        width: 100%;
-        max-width: 480px;
-        animation: fadeInUp 0.8s ease-out 0.4s both;
+      .form-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
       }
       
       .form {
@@ -196,7 +547,7 @@
         gap: 1rem;
       }
       
-      @media (min-width: 640px) {
+      @media (min-width: 500px) {
         .form {
           flex-direction: row;
         }
@@ -223,39 +574,34 @@
         box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
       }
       
-      .btn {
+      .btn-submit {
         padding: 1rem 2rem;
         background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
         border: none;
         border-radius: 14px;
         color: white;
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: 700;
         cursor: pointer;
         transition: all 0.3s;
         white-space: nowrap;
+        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
       }
       
-      .btn:hover {
+      .btn-submit:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 40px rgba(139, 92, 246, 0.4);
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.45);
       }
       
-      .btn:active {
-        transform: translateY(0);
-      }
-      
-      /* Benefits */
-      .benefits {
+      .form-benefits {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 1.5rem;
-        margin-top: 2rem;
-        animation: fadeInUp 0.8s ease-out 0.5s both;
+        margin-top: 1.5rem;
       }
       
-      .benefit {
+      .form-benefit {
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -263,83 +609,33 @@
         color: #9ca3af;
       }
       
-      .benefit-icon {
-        width: 20px;
-        height: 20px;
-        background: rgba(16, 185, 129, 0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .benefit-icon svg {
-        width: 12px;
-        height: 12px;
+      .check-icon {
         color: #10b981;
       }
       
-      /* Features preview */
-      .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin-top: 4rem;
-        width: 100%;
-        max-width: 800px;
-        animation: fadeInUp 0.8s ease-out 0.6s both;
-      }
-      
-      .feature {
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 16px;
-        text-align: left;
-        transition: all 0.3s;
-      }
-      
-      .feature:hover {
-        background: rgba(255, 255, 255, 0.05);
-        border-color: rgba(139, 92, 246, 0.3);
-        transform: translateY(-4px);
-      }
-      
-      .feature-icon {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-      }
-      
-      .feature-icon svg {
-        width: 20px;
-        height: 20px;
-        color: #a78bfa;
-      }
-      
-      .feature h3 {
-        font-size: 1rem;
+      /* Success state */
+      .success-message {
+        display: none;
+        padding: 1.25rem 1.5rem;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        border-radius: 14px;
+        color: #10b981;
         font-weight: 600;
-        margin-bottom: 0.5rem;
+        font-size: 1.125rem;
       }
       
-      .feature p {
-        font-size: 0.875rem;
-        color: #6b7280;
-        line-height: 1.5;
-      }
+      .form-wrapper.success .form { display: none; }
+      .form-wrapper.success .form-benefits { display: none; }
+      .form-wrapper.success .success-message { display: block; }
       
       /* Footer */
       .footer {
-        margin-top: 4rem;
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
         color: #4b5563;
         font-size: 0.875rem;
-        animation: fadeInUp 0.8s ease-out 0.7s both;
       }
       
       /* Animations */
@@ -352,20 +648,6 @@
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
       }
-      
-      /* Success state */
-      .success-message {
-        display: none;
-        padding: 1rem 1.5rem;
-        background: rgba(16, 185, 129, 0.1);
-        border: 1px solid rgba(16, 185, 129, 0.3);
-        border-radius: 14px;
-        color: #10b981;
-        font-weight: 500;
-      }
-      
-      .form-container.success .form { display: none; }
-      .form-container.success .success-message { display: block; }
     </style>
   </head>
   <body>
@@ -375,126 +657,274 @@
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
       <div class="orb orb-3"></div>
-      <div class="orb orb-4"></div>
       <div class="grid-overlay"></div>
     </div>
 
-    <!-- Main content -->
-    <div class="container">
+    <div class="content">
       
-      <!-- Logo -->
-      <div class="logo">
-        <div class="logo-icon">A</div>
-        <span class="logo-text">Agentivo</span>
-      </div>
+      <!-- ========== HERO ========== -->
+      <section class="section hero">
+        <div class="container">
+          
+          <div class="logo">
+            <div class="logo-icon">A</div>
+            <span class="logo-text">Agentivo</span>
+          </div>
+          
+          <h1>
+            Zamykaj <span class="gradient-text">40% więcej transakcji.</span><br>
+            Bez dodatkowej pracy.
+          </h1>
+          
+          <p class="hero-subtitle">
+            AI przejmuje Twoją rutynę — follow-upy, poszukiwanie ofert, trening negocjacji. 
+            Ty skupiasz się na klientach i prowizjach.
+          </p>
+          
+          <a href="#zapisz-sie" class="cta-primary">
+            Dołącz do beta
+            <span class="cta-arrow">→</span>
+          </a>
+          
+          <p class="cta-subtext">
+            <strong>Bezpłatny dostęp</strong> + 50% zniżki lifetime dla pierwszych 200 osób
+          </p>
+          
+        </div>
+      </section>
       
-      <!-- Badge -->
-      <div class="badge">
-        <span class="badge-dot"></span>
-        Już wkrótce
-      </div>
+      <!-- ========== PROBLEM ========== -->
+      <section class="section problem-section">
+        <div class="container">
+          
+          <h2>Brzmi znajomo?</h2>
+          <p class="problem-intro">
+            Każdy pośrednik traci <strong>15+ godzin tygodniowo</strong> na rzeczy, które nie przynoszą prowizji.
+          </p>
+          
+          <div class="pain-points">
+            <div class="pain-point">
+              <div class="pain-icon">📧</div>
+              <div class="pain-content">
+                <h3>Maile, które nigdy nie wychodzą</h3>
+                <p>Wiesz, że powinieneś wysłać follow-up. Ale masz <span class="pain-stat">47 innych rzeczy</span> do zrobienia. Klient trafia do konkurencji.</p>
+              </div>
+            </div>
+            <div class="pain-point">
+              <div class="pain-icon">🔍</div>
+              <div class="pain-content">
+                <h3>Przegapiasz oferty</h3>
+                <p>Zanim znajdziesz idealną nieruchomość dla klienta, <span class="pain-stat">ktoś inny</span> już dzwoni do właściciela.</p>
+              </div>
+            </div>
+            <div class="pain-point">
+              <div class="pain-icon">😰</div>
+              <div class="pain-content">
+                <h3>Trudne rozmowy bez przygotowania</h3>
+                <p>Klient mówi "za drogo" — i nie wiesz co odpowiedzieć. <span class="pain-stat">Transakcja przepada.</span></p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
       
-      <!-- Headline -->
-      <h1>
-        Twój <span class="gradient-text">AI Asystent</span><br>
-        w Nieruchomościach
-      </h1>
+      <!-- ========== SOLUTIONS ========== -->
+      <section class="section solution-section">
+        <div class="container">
+          
+          <h2>Jeden asystent. Trzy supermoce.</h2>
+          <p class="solution-intro">
+            Agentivo pracuje 24/7, żebyś Ty mógł pracować mądrzej.
+          </p>
+          
+          <div class="solutions">
+            
+            <!-- AI Trener -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label">
+                  <span class="solution-label-icon">🎯</span>
+                  AI Trener Negocjacji
+                </div>
+                <h3>Ćwicz 100 scenariuszy, zanim spotkasz klienta</h3>
+                <p>
+                  Symuluj najtrudniejsze rozmowy z AI. "Za drogo", "muszę się zastanowić", 
+                  "znalazłem tańsze" — przećwicz wszystko i idź na spotkanie pewny swoich argumentów.
+                </p>
+                <div class="solution-result">
+                  <div class="result-icon">📈</div>
+                  <div class="result-text">
+                    +40% skuteczność negocjacji
+                    <span>Średni wynik beta-testerów</span>
+                  </div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup">
+                  <div class="mockup-line"></div>
+                  <div class="mockup-line"></div>
+                  <div class="mockup-line"></div>
+                  <div class="mockup-accent"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Smart Maile -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label">
+                  <span class="solution-label-icon">✉️</span>
+                  Smart Maile
+                </div>
+                <h3>50 spersonalizowanych follow-upów dziennie. 0 Twojego czasu.</h3>
+                <p>
+                  AI pisze maile w Twoim stylu, dopasowane do każdego klienta. 
+                  Ty tylko zatwierdzasz jednym klikiem. Żaden lead nie zostanie zapomniany.
+                </p>
+                <div class="solution-result">
+                  <div class="result-icon">⏱️</div>
+                  <div class="result-text">
+                    8 godzin tygodniowo oszczędności
+                    <span>Na samych mailach i follow-upach</span>
+                  </div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup">
+                  <div class="mockup-line"></div>
+                  <div class="mockup-line"></div>
+                  <div class="mockup-line"></div>
+                  <div class="mockup-accent"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Skaner Ofert -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label">
+                  <span class="solution-label-icon">🔎</span>
+                  Skaner Ofert
+                </div>
+                <h3>Znajdź ofertę 2 godziny przed konkurencją</h3>
+                <p>
+                  AI monitoruje wszystkie portale 24/7 i powiadamia Cię SMS-em, 
+                  gdy pojawi się oferta pasująca do Twoich kryteriów. 
+                  Bądź pierwszy przy telefonie.
+                </p>
+                <div class="solution-result">
+                  <div class="result-icon">🏆</div>
+                  <div class="result-text">
+                    3x więcej ofert wyłącznych
+                    <span>Dzięki szybszemu kontaktowi</span>
+                  </div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup">
+                  <div class="mockup-line"></div>
+                  <div class="mockup-line"></div>
+                  <div class="mockup-line"></div>
+                  <div class="mockup-accent"></div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+      </section>
       
-      <!-- Subtitle -->
-      <p class="subtitle">
-        Trenuj rozmowy sprzedażowe z AI, automatyzuj e-maile i zarządzaj klientami. 
-        Zwiększ sprzedaż o 40% dzięki sztucznej inteligencji.
-      </p>
+      <!-- ========== SOCIAL PROOF ========== -->
+      <section class="section social-section">
+        <div class="container">
+          
+          <div class="social-stat">
+            <span class="number">127</span> pośredników
+          </div>
+          <p class="social-subtitle">już czeka na dostęp do Agentivo</p>
+          
+          <div class="testimonials">
+            <div class="testimonial">
+              <p class="testimonial-quote">
+                "Wreszcie coś, co rozumie specyfikę naszej branży. Nie mogę się doczekać AI Trenera — 
+                moi juniorzy będą mogli ćwiczyć bez stresu."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">MK</div>
+                <div class="author-info">
+                  <div class="author-name">Marek K.</div>
+                  <div class="author-role">Właściciel biura, Kraków</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial">
+              <p class="testimonial-quote">
+                "Tracę godziny na przeglądanie portali. Skaner ofert to game changer — 
+                będę wiedziała o nowych ofertach zanim inni włączą komputer."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">AN</div>
+                <div class="author-info">
+                  <div class="author-name">Anna N.</div>
+                  <div class="author-role">Pośrednik, Warszawa</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
       
-      <!-- Form -->
-      <div class="form-container" id="formContainer">
-        <form class="form" id="waitlistForm">
-          <input 
-            type="email" 
-            class="input" 
-            placeholder="Twój adres e-mail" 
-            required
-            id="emailInput"
-          />
-          <button type="submit" class="btn">Zapisz się</button>
-        </form>
-        <div class="success-message">
-          ✅ Dziękujemy! Powiadomimy Cię o starcie.
-        </div>
-      </div>
-      
-      <!-- Benefits -->
-      <div class="benefits">
-        <div class="benefit">
-          <div class="benefit-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+      <!-- ========== FINAL CTA ========== -->
+      <section class="section final-cta" id="zapisz-sie">
+        <div class="container">
+          
+          <h2>Gotowy zamykać więcej transakcji?</h2>
+          <p class="final-cta-subtitle">
+            Dołącz do listy oczekujących i zyskaj dostęp jako jeden z pierwszych.
+          </p>
+          
+          <div class="form-wrapper" id="formWrapper">
+            <form class="form" id="waitlistForm">
+              <input 
+                type="email" 
+                class="input" 
+                placeholder="Twój adres e-mail" 
+                required
+                id="emailInput"
+              />
+              <button type="submit" class="btn-submit">Zapisz się →</button>
+            </form>
+            
+            <div class="form-benefits">
+              <div class="form-benefit">
+                <span class="check-icon">✓</span>
+                Bezpłatny early access
+              </div>
+              <div class="form-benefit">
+                <span class="check-icon">✓</span>
+                50% zniżki na zawsze
+              </div>
+              <div class="form-benefit">
+                <span class="check-icon">✓</span>
+                Zero spamu
+              </div>
+            </div>
+            
+            <div class="success-message">
+              ✅ Świetnie! Jesteś na liście. Odezwiemy się wkrótce.
+            </div>
           </div>
-          Bezpłatny early access
+          
         </div>
-        <div class="benefit">
-          <div class="benefit-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-          </div>
-          50% zniżki na start
-        </div>
-        <div class="benefit">
-          <div class="benefit-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-          </div>
-          Bez spamu
-        </div>
-      </div>
-      
-      <!-- Features preview -->
-      <div class="features">
-        <div class="feature">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-          </div>
-          <h3>AI Trener Rozmów</h3>
-          <p>Ćwicz negocjacje i trudne rozmowy z AI</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </div>
-          <h3>Smart E-maile</h3>
-          <p>Automatyczne oferty i follow-upy</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
-          </div>
-          <h3>Voice Notes</h3>
-          <p>Dyktuj notatki, AI transkrybuje i organizuje</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          </div>
-          <h3>Skaner Ofert</h3>
-          <p>Znajdź oferty przed konkurencją</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          </div>
-          <h3>Raporty Cenowe</h3>
-          <p>Profesjonalne PDF z analizą rynku</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          </div>
-          <h3>Smart CRM</h3>
-          <p>Zarządzaj klientami inteligentnie</p>
-        </div>
-      </div>
+      </section>
       
       <!-- Footer -->
-      <div class="footer">
+      <footer class="footer">
         © 2025 Agentivo. Wszystkie prawa zastrzeżone.
-      </div>
+      </footer>
       
     </div>
 
@@ -507,7 +937,7 @@
         console.log('Email zapisany:', email);
         
         // Pokaż sukces
-        document.getElementById('formContainer').classList.add('success');
+        document.getElementById('formWrapper').classList.add('success');
       });
     </script>
 
