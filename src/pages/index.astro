@@ -431,6 +431,108 @@
         margin-top: auto;
       }
       
+      /* ========== CRM MOCKUP ========== */
+      .crm-mockup {
+        padding: 1rem;
+      }
+
+      .crm-pipeline {
+        display: flex;
+        gap: 0.5rem;
+        width: 100%;
+        height: 100%;
+      }
+
+      .crm-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .crm-column-header {
+        font-size: 0.625rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding-bottom: 0.375rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .crm-deal {
+        height: 28px;
+        background: rgba(139, 92, 246, 0.15);
+        border: 1px solid rgba(139, 92, 246, 0.25);
+        border-radius: 6px;
+      }
+
+      .crm-deal.active {
+        background: rgba(34, 211, 238, 0.15);
+        border-color: rgba(34, 211, 238, 0.3);
+      }
+
+      .crm-deal.done {
+        background: rgba(16, 185, 129, 0.15);
+        border-color: rgba(16, 185, 129, 0.3);
+      }
+
+      /* ========== VOICE MOCKUP ========== */
+      .voice-mockup {
+        padding: 1.25rem;
+      }
+
+      .voice-ui {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: 100%;
+        justify-content: center;
+      }
+
+      .voice-waveform {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        height: 60px;
+      }
+
+      .wave-bar {
+        width: 6px;
+        background: linear-gradient(180deg, #8b5cf6 0%, #6366f1 100%);
+        border-radius: 3px;
+        animation: waveAnim 1.2s ease-in-out infinite alternate;
+      }
+
+      .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+      .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+      .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+      .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+      .wave-bar:nth-child(6) { animation-delay: 0.5s; }
+      .wave-bar:nth-child(7) { animation-delay: 0.6s; }
+      .wave-bar:nth-child(8) { animation-delay: 0.7s; }
+      .wave-bar:nth-child(9) { animation-delay: 0.8s; }
+      .wave-bar:nth-child(10) { animation-delay: 0.9s; }
+
+      @keyframes waveAnim {
+        0% { transform: scaleY(0.4); opacity: 0.5; }
+        100% { transform: scaleY(1); opacity: 1; }
+      }
+
+      .voice-transcript {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 8px;
+      }
+
+      .voice-transcript .mockup-line:nth-child(1) { width: 85%; }
+      .voice-transcript .mockup-line:nth-child(2) { width: 60%; }
+
       /* ========== SOCIAL PROOF ========== */
       .social-section {
         background: rgba(0, 0, 0, 0.2);
@@ -771,7 +873,7 @@
           
           <h2>Więcej prowizji. Mniej godzin pracy.</h2>
           <p class="solution-intro">
-            Trzy narzędzia AI, które pracują na Twoje wyniki 24/7.
+            Pięć narzędzi AI, które pracują na Twoje wyniki 24/7.
           </p>
           
           <div class="solutions">
@@ -845,8 +947,8 @@
                 </div>
                 <h3>Znajdź ofertę 2 godziny przed konkurencją</h3>
                 <p>
-                  AI monitoruje wszystkie portale 24/7 i powiadamia Cię SMS-em, 
-                  gdy pojawi się oferta pasująca do Twoich kryteriów. 
+                  AI monitoruje wszystkie portale 24/7 i powiadamia Cię SMS-em,
+                  gdy pojawi się oferta pasująca do Twoich kryteriów.
                   Bądź pierwszy przy telefonie.
                 </p>
                 <div class="solution-result">
@@ -863,6 +965,92 @@
                   <div class="mockup-line"></div>
                   <div class="mockup-line"></div>
                   <div class="mockup-accent"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Smart CRM -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label">
+                  <span class="solution-label-icon">📊</span>
+                  Smart CRM
+                </div>
+                <h3>Każdy klient i transakcja pod kontrolą — bez Excela</h3>
+                <p>
+                  Zarządzaj pipeline'em transakcji w jednym widoku. AI automatycznie kategoryzuje klientów,
+                  przypomina o follow-upach i podpowiada, który deal ma największą szansę na zamknięcie.
+                </p>
+                <div class="solution-result">
+                  <div class="result-icon">💰</div>
+                  <div class="result-text">
+                    Zero zapomnianych klientów
+                    <span>Automatyczny pipeline i przypomnienia</span>
+                  </div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup crm-mockup">
+                  <div class="crm-pipeline">
+                    <div class="crm-column">
+                      <div class="crm-column-header">Nowy</div>
+                      <div class="crm-deal"></div>
+                      <div class="crm-deal"></div>
+                    </div>
+                    <div class="crm-column">
+                      <div class="crm-column-header">Prezentacja</div>
+                      <div class="crm-deal active"></div>
+                    </div>
+                    <div class="crm-column">
+                      <div class="crm-column-header">Zamknięte</div>
+                      <div class="crm-deal done"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notatki Głosowe -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label">
+                  <span class="solution-label-icon">🎙️</span>
+                  Voice Notes
+                </div>
+                <h3>Mów zamiast pisać — AI zrobi resztę</h3>
+                <p>
+                  Po spotkaniu z klientem nagraj 30-sekundową notatkę głosową.
+                  AI transkrybuje ją, wyciąga kluczowe ustalenia i automatycznie
+                  aktualizuje kartę klienta w CRM.
+                </p>
+                <div class="solution-result">
+                  <div class="result-icon">🎧</div>
+                  <div class="result-text">
+                    30 sek zamiast 10 min notatek
+                    <span>Voice-to-text z automatycznym podsumowaniem</span>
+                  </div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup voice-mockup">
+                  <div class="voice-ui">
+                    <div class="voice-waveform">
+                      <div class="wave-bar" style="height: 30%;"></div>
+                      <div class="wave-bar" style="height: 60%;"></div>
+                      <div class="wave-bar" style="height: 90%;"></div>
+                      <div class="wave-bar" style="height: 45%;"></div>
+                      <div class="wave-bar" style="height: 75%;"></div>
+                      <div class="wave-bar" style="height: 50%;"></div>
+                      <div class="wave-bar" style="height: 85%;"></div>
+                      <div class="wave-bar" style="height: 35%;"></div>
+                      <div class="wave-bar" style="height: 65%;"></div>
+                      <div class="wave-bar" style="height: 40%;"></div>
+                    </div>
+                    <div class="voice-transcript">
+                      <div class="mockup-line"></div>
+                      <div class="mockup-line"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
