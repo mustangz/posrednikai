@@ -638,12 +638,45 @@
         font-size: 0.875rem;
       }
       
+      /* Scroll arrow */
+      .scroll-arrow {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: fadeInUp 0.8s ease-out 0.6s both;
+      }
+
+      .scroll-arrow a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        color: rgba(255, 255, 255, 0.4);
+        text-decoration: none;
+        transition: all 0.3s;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      .scroll-arrow a:hover {
+        border-color: rgba(139, 92, 246, 0.5);
+        color: rgba(139, 92, 246, 0.8);
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(8px); }
+      }
+
       /* Animations */
       @keyframes fadeInDown {
         from { opacity: 0; transform: translateY(-20px); }
         to { opacity: 1; transform: translateY(0); }
       }
-      
+
       @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -677,26 +710,29 @@
           </h1>
           
           <p class="hero-subtitle">
-            AI przejmuje Twoją rutynę — follow-upy, poszukiwanie ofert, trening negocjacji. 
-            Ty skupiasz się na klientach i prowizjach.
+            AI wysyła follow-upy, skanuje oferty i trenuje Twoje negocjacje.
+            Ty zamykasz transakcje.
           </p>
-          
+
           <a href="#zapisz-sie" class="cta-primary">
-            Dołącz do beta
+            Zarezerwuj darmowy dostęp
             <span class="cta-arrow">→</span>
           </a>
           
           <p class="cta-subtext">
             <strong>Bezpłatny dostęp</strong> + 50% zniżki lifetime dla pierwszych 200 osób
           </p>
-          
+
+        </div>
+        <div class="scroll-arrow">
+          <a href="#problem"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
         </div>
       </section>
       
       <!-- ========== PROBLEM ========== -->
-      <section class="section problem-section">
+      <section class="section problem-section" id="problem">
         <div class="container">
-          
+
           <h2>Brzmi znajomo?</h2>
           <p class="problem-intro">
             Każdy pośrednik traci <strong>15+ godzin tygodniowo</strong> na rzeczy, które nie przynoszą prowizji.
@@ -733,9 +769,9 @@
       <section class="section solution-section">
         <div class="container">
           
-          <h2>Jeden asystent. Trzy supermoce.</h2>
+          <h2>Więcej prowizji. Mniej godzin pracy.</h2>
           <p class="solution-intro">
-            Agentivo pracuje 24/7, żebyś Ty mógł pracować mądrzej.
+            Trzy narzędzia AI, które pracują na Twoje wyniki 24/7.
           </p>
           
           <div class="solutions">
@@ -841,9 +877,9 @@
         <div class="container">
           
           <div class="social-stat">
-            <span class="number">127</span> pośredników
+            <span class="number">127+</span> pośredników
           </div>
-          <p class="social-subtitle">już czeka na dostęp do Agentivo</p>
+          <p class="social-subtitle">już zapisało się na listę — zostało <strong style="color: #f59e0b;">73 miejsca</strong> z darmowym dostępem</p>
           
           <div class="testimonials">
             <div class="testimonial">
@@ -881,9 +917,9 @@
       <section class="section final-cta" id="zapisz-sie">
         <div class="container">
           
-          <h2>Gotowy zamykać więcej transakcji?</h2>
+          <h2>Zacznij zamykać więcej transakcji</h2>
           <p class="final-cta-subtitle">
-            Dołącz do listy oczekujących i zyskaj dostęp jako jeden z pierwszych.
+            Wpisz maila — poinformujemy Cię jako jednego z pierwszych.
           </p>
           
           <div class="form-wrapper" id="formWrapper">
@@ -895,7 +931,7 @@
                 required
                 id="emailInput"
               />
-              <button type="submit" class="btn-submit">Zapisz się →</button>
+              <button type="submit" class="btn-submit">Chcę darmowy dostęp →</button>
             </form>
             
             <div class="form-benefits">
@@ -923,7 +959,7 @@
       
       <!-- Footer -->
       <footer class="footer">
-        © 2025 Agentivo. Wszystkie prawa zastrzeżone.
+        © 2026 Agentivo. Wszystkie prawa zastrzeżone.
       </footer>
       
     </div>
