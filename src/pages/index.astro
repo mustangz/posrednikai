@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agentivo — Zamykaj 40% więcej transakcji | AI dla Pośredników</title>
-    <meta name="description" content="Przestań tracić czas na rutynę. AI Trener, Smart Maile, Skaner Ofert — zamknij więcej transakcji bez dodatkowej pracy. Dołącz do 127 pośredników na liście." />
+    <meta name="description" content="Przestań tracić czas na rutynę. AI Trener, Smart Maile, Skaner Ofert — zamknij więcej transakcji bez dodatkowej pracy. Presale -50%: 99 PLN/mies zamiast 199 PLN." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -207,6 +207,13 @@
       
       .cta-subtext strong {
         color: #10b981;
+      }
+
+      .price-old {
+        text-decoration: line-through;
+        color: #6b7280;
+        font-weight: 400;
+        margin-right: 0.25rem;
       }
       
       /* ========== PROBLEM SECTION ========== */
@@ -818,12 +825,12 @@
           </p>
 
           <a href="#zapisz-sie" class="cta-primary">
-            Zarezerwuj darmowy dostęp
+            Kup w presale — 99 PLN/mies
             <span class="cta-arrow">→</span>
           </a>
-          
+
           <p class="cta-subtext">
-            <strong>Bezpłatny dostęp</strong> + 50% zniżki lifetime dla pierwszych 200 osób
+            <span class="price-old">199 PLN/mies</span> <strong>99 PLN/mies</strong> — cena presale na zawsze
           </p>
 
         </div>
@@ -1068,7 +1075,7 @@
           <div class="social-stat">
             <span class="number">127+</span> pośredników
           </div>
-          <p class="social-subtitle">już zapisało się na listę — zostało <strong style="color: #f59e0b;">73 miejsca</strong> z darmowym dostępem</p>
+          <p class="social-subtitle">już dołączyło do presale</p>
           
           <div class="testimonials">
             <div class="testimonial">
@@ -1106,35 +1113,35 @@
       <section class="section final-cta" id="zapisz-sie">
         <div class="container">
           
-          <h2>Zacznij zamykać więcej transakcji</h2>
+          <h2>Presale: <span class="price-old">199 PLN</span> <span class="gradient-text">99 PLN/mies</span></h2>
           <p class="final-cta-subtitle">
-            Wpisz maila — poinformujemy Cię jako jednego z pierwszych.
+            Dołącz teraz — cena presale zostaje z Tobą na zawsze.
           </p>
-          
+
           <div class="form-wrapper" id="formWrapper">
             <form class="form" id="waitlistForm">
-              <input 
-                type="email" 
-                class="input" 
-                placeholder="Twój adres e-mail" 
+              <input
+                type="email"
+                class="input"
+                placeholder="Twój adres e-mail"
                 required
                 id="emailInput"
               />
-              <button type="submit" class="btn-submit">Chcę darmowy dostęp →</button>
+              <button type="submit" class="btn-submit">Kupuję w presale — 99 PLN/mies →</button>
             </form>
-            
+
             <div class="form-benefits">
               <div class="form-benefit">
                 <span class="check-icon">✓</span>
-                Bezpłatny early access
+                -50% na zawsze
               </div>
               <div class="form-benefit">
                 <span class="check-icon">✓</span>
-                50% zniżki na zawsze
+                Dostęp jako pierwszy
               </div>
               <div class="form-benefit">
                 <span class="check-icon">✓</span>
-                Zero spamu
+                Rezygnacja w dowolnym momencie
               </div>
             </div>
             
@@ -1154,64 +1161,18 @@
     </div>
 
     <script>
-      // A/B Test Logic
-      const urlParams = new URLSearchParams(window.location.search);
-      let variant = urlParams.get('v');
-      if (!variant) {
-        variant = Math.random() > 0.5 ? 'b' : 'a';
-      }
-      
-      // Track variant
-      if (window.va) {
-        window.va('event', { name: 'page_view', data: { variant } });
-      }
-      
       const form = document.getElementById('waitlistForm');
-      const submitBtn = form.querySelector('.btn-submit');
       const formWrapper = document.getElementById('formWrapper');
-      
-      // Variant B: Show buy button
-      if (variant === 'b') {
-        submitBtn.textContent = 'Kup teraz — 199 PLN/mies →';
-        submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-        
-        // Update hero CTA if exists
-        document.querySelectorAll('a[href="#zapisz-sie"]').forEach(el => {
-          el.textContent = 'Kup teraz — 199 PLN';
-          el.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-        });
-      }
-      
-      let checkoutClicked = false;
-      
+
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         const email = document.getElementById('emailInput').value;
-        
-        if (variant === 'b' && !checkoutClicked) {
-          // First click on variant B = checkout intent
-          checkoutClicked = true;
-          if (window.va) {
-            window.va('event', { name: 'checkout_click', data: { variant: 'b', price: 199 } });
-          }
-          
-          // Show "not ready" message
-          document.querySelector('.final-cta h2').textContent = 'Prawie gotowe! 🎉';
-          document.querySelector('.final-cta-subtitle').innerHTML = 
-            'Jeszcze nie uruchomiliśmy płatności. Zostaw email — dostaniesz <strong style="color:#22c55e">50% zniżki</strong> jako pierwszy.';
-          submitBtn.textContent = 'Chcę zniżkę →';
-          return;
-        }
-        
-        // Track signup
+
         if (window.va) {
-          window.va('event', { 
-            name: variant === 'b' ? 'checkout_email_submit' : 'signup_submit', 
-            data: { variant, email } 
-          });
+          window.va('event', { name: 'presale_submit', data: { email, price: 99 } });
         }
-        
-        console.log('Email zapisany:', email, 'variant:', variant);
+
+        console.log('Presale email:', email);
         formWrapper.classList.add('success');
       });
     </script>
