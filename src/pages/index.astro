@@ -1154,15 +1154,65 @@
     </div>
 
     <script>
-      document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+      // A/B Test Logic
+      const urlParams = new URLSearchParams(window.location.search);
+      let variant = urlParams.get('v');
+      if (!variant) {
+        variant = Math.random() > 0.5 ? 'b' : 'a';
+      }
+      
+      // Track variant
+      if (window.va) {
+        window.va('event', { name: 'page_view', data: { variant } });
+      }
+      
+      const form = document.getElementById('waitlistForm');
+      const submitBtn = form.querySelector('.btn-submit');
+      const formWrapper = document.getElementById('formWrapper');
+      
+      // Variant B: Show buy button
+      if (variant === 'b') {
+        submitBtn.textContent = 'Kup teraz — 199 PLN/mies →';
+        submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+        
+        // Update hero CTA if exists
+        document.querySelectorAll('a[href="#zapisz-sie"]').forEach(el => {
+          el.textContent = 'Kup teraz — 199 PLN';
+          el.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+        });
+      }
+      
+      let checkoutClicked = false;
+      
+      form.addEventListener('submit', function(e) {
         e.preventDefault();
         const email = document.getElementById('emailInput').value;
         
-        // Tu można dodać integrację z Mailchimp/ConvertKit/Supabase
-        console.log('Email zapisany:', email);
+        if (variant === 'b' && !checkoutClicked) {
+          // First click on variant B = checkout intent
+          checkoutClicked = true;
+          if (window.va) {
+            window.va('event', { name: 'checkout_click', data: { variant: 'b', price: 199 } });
+          }
+          
+          // Show "not ready" message
+          document.querySelector('.final-cta h2').textContent = 'Prawie gotowe! 🎉';
+          document.querySelector('.final-cta-subtitle').innerHTML = 
+            'Jeszcze nie uruchomiliśmy płatności. Zostaw email — dostaniesz <strong style="color:#22c55e">50% zniżki</strong> jako pierwszy.';
+          submitBtn.textContent = 'Chcę zniżkę →';
+          return;
+        }
         
-        // Pokaż sukces
-        document.getElementById('formWrapper').classList.add('success');
+        // Track signup
+        if (window.va) {
+          window.va('event', { 
+            name: variant === 'b' ? 'checkout_email_submit' : 'signup_submit', 
+            data: { variant, email } 
+          });
+        }
+        
+        console.log('Email zapisany:', email, 'variant:', variant);
+        formWrapper.classList.add('success');
       });
     </script>
 
