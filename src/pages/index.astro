@@ -965,6 +965,125 @@
         30% { opacity: 1; transform: scale(1.2); }
       }
 
+      /* ========== KW SCANNER MOCKUP ========== */
+      .kw-mockup {
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .kw-ui {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .kw-header-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.625rem 1rem;
+        background: rgba(139, 92, 246, 0.08);
+        border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+      }
+
+      .kw-header-title {
+        font-size: 0.6875rem;
+        font-weight: 700;
+        color: #d1d5db;
+      }
+
+      .kw-header-live {
+        font-size: 0.5rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        padding: 0.15rem 0.4rem;
+        background: rgba(239, 68, 68, 0.25);
+        border: 1px solid rgba(239, 68, 68, 0.4);
+        border-radius: 3px;
+        color: #fca5a5;
+        animation: pulse-staging 2s ease-in-out infinite;
+      }
+
+      .kw-entries {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+        padding: 0.625rem;
+        overflow: hidden;
+      }
+
+      .kw-entry {
+        padding: 0.5rem 0.625rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 6px;
+      }
+
+      .kw-entry-new {
+        background: rgba(139, 92, 246, 0.06);
+        border-color: rgba(139, 92, 246, 0.2);
+      }
+
+      .kw-entry-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.25rem;
+      }
+
+      .kw-entry-badge {
+        font-size: 0.4375rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        padding: 0.1rem 0.35rem;
+        border-radius: 3px;
+      }
+
+      .kw-badge-new {
+        background: rgba(139, 92, 246, 0.25);
+        border: 1px solid rgba(139, 92, 246, 0.4);
+        color: #c4b5fd;
+      }
+
+      .kw-badge-hipoteka {
+        background: rgba(34, 211, 238, 0.15);
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        color: #67e8f9;
+      }
+
+      .kw-badge-sprzedaz {
+        background: rgba(16, 185, 129, 0.15);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        color: #6ee7b7;
+      }
+
+      .kw-entry-date {
+        font-size: 0.4375rem;
+        color: #4b5563;
+      }
+
+      .kw-entry-kw {
+        font-size: 0.5625rem;
+        font-weight: 600;
+        color: #9ca3af;
+        font-family: monospace;
+        margin-bottom: 0.125rem;
+      }
+
+      .kw-entry-detail {
+        font-size: 0.5rem;
+        color: #6b7280;
+      }
+
+      .kw-footer {
+        padding: 0.5rem 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 0.5625rem;
+        color: #4b5563;
+        text-align: center;
+      }
+
       /* ========== SOCIAL PROOF ========== */
       .social-section {
         background: rgba(0, 0, 0, 0.2);
@@ -1305,7 +1424,7 @@
           
           <h2>Więcej prowizji. Mniej godzin pracy.</h2>
           <p class="solution-intro">
-            Osiem narzędzi AI, które pracują na Twoje wyniki 24/7.
+            Dziewięć narzędzi AI, które pracują na Twoje wyniki 24/7.
           </p>
           
           <div class="solutions">
@@ -1690,6 +1809,68 @@
                           <span></span><span></span><span></span>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skaner KW Konkurencji -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label">
+                  <span class="solution-label-icon">🔓</span>
+                  Skaner KW Konkurencji
+                </div>
+                <h3>Sprawdź, co robi konkurencja — zanim ona sprawdzi Ciebie</h3>
+                <p>
+                  AI analizuje księgi wieczyste i wyłapuje zmiany właścicieli, obciążenia hipoteczne
+                  i nowe wpisy w Twoim rejonie. Dowiedz się, kto kupuje, kto sprzedaje
+                  i które nieruchomości wracają na rynek — szybciej niż konkurencja.
+                </p>
+                <div class="solution-result">
+                  <div class="result-icon">🎯</div>
+                  <div class="result-text">
+                    Leady, o których inni nie wiedzą
+                    <span>Monitoring zmian w KW na wybranym obszarze</span>
+                  </div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup kw-mockup">
+                  <div class="kw-ui">
+                    <div class="kw-header-bar">
+                      <span class="kw-header-title">Monitoring KW — Opole</span>
+                      <span class="kw-header-live">LIVE</span>
+                    </div>
+                    <div class="kw-entries">
+                      <div class="kw-entry kw-entry-new">
+                        <div class="kw-entry-top">
+                          <span class="kw-entry-badge kw-badge-new">NOWY WPIS</span>
+                          <span class="kw-entry-date">dziś, 09:14</span>
+                        </div>
+                        <div class="kw-entry-kw">OP1O/00084521/3</div>
+                        <div class="kw-entry-detail">Zmiana właściciela — ul. Ozimska 41</div>
+                      </div>
+                      <div class="kw-entry">
+                        <div class="kw-entry-top">
+                          <span class="kw-entry-badge kw-badge-hipoteka">HIPOTEKA</span>
+                          <span class="kw-entry-date">wczoraj</span>
+                        </div>
+                        <div class="kw-entry-kw">OP1O/00091237/8</div>
+                        <div class="kw-entry-detail">Wykreślenie hipoteki — Reymonta 15</div>
+                      </div>
+                      <div class="kw-entry">
+                        <div class="kw-entry-top">
+                          <span class="kw-entry-badge kw-badge-sprzedaz">SPRZEDAŻ</span>
+                          <span class="kw-entry-date">2 dni temu</span>
+                        </div>
+                        <div class="kw-entry-kw">OP1O/00076892/1</div>
+                        <div class="kw-entry-detail">Akt notarialny — Plebiscytowa 3/7</div>
+                      </div>
+                    </div>
+                    <div class="kw-footer">
+                      <span>23 zmiany w tym tygodniu</span>
                     </div>
                   </div>
                 </div>
