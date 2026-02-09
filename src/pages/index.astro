@@ -7,13 +7,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agentivo — Zamykaj 40% więcej transakcji | AI dla Pośredników</title>
-    <meta name="description" content="Przestań tracić czas na rutynę. AI Trener, Smart Maile, Skaner Ofert — zamknij więcej transakcji bez dodatkowej pracy. Presale -50%: 99 PLN/mies zamiast 199 PLN." />
+    <meta name="description" content="9 narzędzi AI dla pośredników nieruchomości. Follow-upy, skaner ofert, AI trener negocjacji, virtual staging, monitoring KW i więcej. Presale -50%: 99 PLN/mies." />
+    <meta property="og:title" content="Agentivo — AI dla Pośredników Nieruchomości" />
+    <meta property="og:description" content="9 narzędzi AI: follow-upy, skaner ofert, trener negocjacji, virtual staging. Presale -50%: 99 PLN/mies." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agentivo.pl" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%238b5cf6'/><text x='50' y='68' font-size='60' font-weight='800' text-anchor='middle' fill='white'>A</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      
+
       body {
         font-family: 'Inter', system-ui, sans-serif;
         background: #0a0a12;
@@ -21,7 +27,7 @@
         overflow-x: hidden;
         line-height: 1.6;
       }
-      
+
       /* Animated background */
       .bg-animation {
         position: fixed;
@@ -30,7 +36,7 @@
         pointer-events: none;
         z-index: 0;
       }
-      
+
       .orb {
         position: absolute;
         border-radius: 50%;
@@ -38,7 +44,7 @@
         mix-blend-mode: screen;
         opacity: 0.6;
       }
-      
+
       .orb-1 {
         width: 600px;
         height: 600px;
@@ -47,7 +53,7 @@
         left: -200px;
         animation: float 8s ease-in-out infinite;
       }
-      
+
       .orb-2 {
         width: 500px;
         height: 500px;
@@ -56,7 +62,7 @@
         right: -150px;
         animation: float 10s ease-in-out infinite reverse;
       }
-      
+
       .orb-3 {
         width: 400px;
         height: 400px;
@@ -65,42 +71,136 @@
         left: 20%;
         animation: float 12s ease-in-out infinite;
       }
-      
+
       @keyframes float {
         0%, 100% { transform: translateY(0) rotate(0deg); }
         50% { transform: translateY(-30px) rotate(5deg); }
       }
-      
+
       .grid-overlay {
         position: absolute;
         inset: 0;
-        background-image: 
+        background-image:
           linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
           linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
         background-size: 80px 80px;
       }
-      
+
       /* Layout */
       .content {
         position: relative;
         z-index: 10;
       }
-      
+
       .section {
         padding: 6rem 1.5rem;
       }
-      
+
       @media (min-width: 768px) {
         .section {
           padding: 8rem 2rem;
         }
       }
-      
+
       .container {
         max-width: 1100px;
         margin: 0 auto;
       }
-      
+
+      /* ========== STICKY NAVBAR ========== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 0.75rem 1.5rem;
+        background: rgba(10, 10, 18, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        transition: all 0.3s;
+      }
+
+      .navbar-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: white;
+      }
+
+      .navbar-logo-icon {
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.875rem;
+      }
+
+      .navbar-logo-text {
+        font-size: 1.125rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .navbar-links {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        .navbar-links {
+          display: flex;
+        }
+      }
+
+      .navbar-links a {
+        font-size: 0.875rem;
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .navbar-links a:hover {
+        color: white;
+      }
+
+      .navbar-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.25rem;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        box-shadow: 0 2px 12px rgba(139, 92, 246, 0.3);
+      }
+
+      .navbar-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.45);
+      }
+
       /* ========== HERO ========== */
       .hero {
         position: relative;
@@ -109,10 +209,9 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        padding-top: 4rem;
+        padding-top: 6rem;
       }
-      
-      /* Logo */
+
       .logo {
         display: flex;
         align-items: center;
@@ -121,7 +220,7 @@
         margin-bottom: 4rem;
         animation: fadeInDown 0.8s ease-out;
       }
-      
+
       .logo-icon {
         width: 48px;
         height: 48px;
@@ -134,14 +233,13 @@
         font-size: 1.25rem;
         box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
       }
-      
+
       .logo-text {
         font-size: 1.5rem;
         font-weight: 800;
         letter-spacing: -0.02em;
       }
-      
-      /* Headline */
+
       .hero h1 {
         font-size: clamp(2.25rem, 6vw, 4rem);
         font-weight: 900;
@@ -150,23 +248,22 @@
         letter-spacing: -0.03em;
         animation: fadeInUp 0.8s ease-out 0.1s both;
       }
-      
+
       .gradient-text {
         background: linear-gradient(135deg, #22d3ee 0%, #818cf8 50%, #c084fc 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
-      
+
       .hero-subtitle {
         font-size: clamp(1.125rem, 2.5vw, 1.375rem);
         color: #9ca3af;
-        max-width: 600px;
+        max-width: 650px;
         margin: 0 auto 3rem;
         animation: fadeInUp 0.8s ease-out 0.2s both;
       }
-      
-      /* CTA Button - Primary */
+
       .cta-primary {
         display: inline-flex;
         align-items: center;
@@ -184,27 +281,27 @@
         animation: fadeInUp 0.8s ease-out 0.3s both;
         box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
       }
-      
+
       .cta-primary:hover {
         transform: translateY(-3px);
         box-shadow: 0 12px 40px rgba(139, 92, 246, 0.5);
       }
-      
+
       .cta-arrow {
         transition: transform 0.3s;
       }
-      
+
       .cta-primary:hover .cta-arrow {
         transform: translateX(4px);
       }
-      
+
       .cta-subtext {
         margin-top: 1rem;
         font-size: 0.875rem;
         color: #6b7280;
         animation: fadeInUp 0.8s ease-out 0.4s both;
       }
-      
+
       .cta-subtext strong {
         color: #10b981;
       }
@@ -215,14 +312,41 @@
         font-weight: 400;
         margin-right: 0.25rem;
       }
-      
+
+      .urgency-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.25);
+        border-radius: 100px;
+        font-size: 0.8125rem;
+        color: #fca5a5;
+        animation: fadeInUp 0.8s ease-out 0.5s both;
+      }
+
+      .urgency-dot {
+        width: 8px;
+        height: 8px;
+        background: #ef4444;
+        border-radius: 50%;
+        animation: pulse-dot 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse-dot {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+      }
+
       /* ========== PROBLEM SECTION ========== */
       .problem-section {
         background: rgba(0, 0, 0, 0.3);
         border-top: 1px solid rgba(255, 255, 255, 0.05);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
-      
+
       .problem-section h2 {
         font-size: clamp(1.75rem, 4vw, 2.5rem);
         font-weight: 800;
@@ -230,7 +354,7 @@
         margin-bottom: 1rem;
         letter-spacing: -0.02em;
       }
-      
+
       .problem-intro {
         text-align: center;
         color: #9ca3af;
@@ -238,14 +362,14 @@
         max-width: 700px;
         margin: 0 auto 3.5rem;
       }
-      
+
       .pain-points {
         display: grid;
         gap: 1.5rem;
         max-width: 800px;
         margin: 0 auto;
       }
-      
+
       .pain-point {
         display: flex;
         align-items: flex-start;
@@ -255,7 +379,7 @@
         border: 1px solid rgba(239, 68, 68, 0.15);
         border-radius: 16px;
       }
-      
+
       .pain-icon {
         flex-shrink: 0;
         width: 48px;
@@ -267,25 +391,25 @@
         justify-content: center;
         font-size: 1.5rem;
       }
-      
+
       .pain-content h3 {
         font-size: 1.125rem;
         font-weight: 700;
         margin-bottom: 0.25rem;
         color: #fca5a5;
       }
-      
+
       .pain-content p {
         color: #9ca3af;
         font-size: 0.9375rem;
       }
-      
+
       .pain-stat {
         color: #f87171;
         font-weight: 700;
       }
-      
-      /* ========== SOLUTION SECTION ========== */
+
+      /* ========== SOLUTION SECTION (Flagship 3) ========== */
       .solution-section h2 {
         font-size: clamp(1.75rem, 4vw, 2.5rem);
         font-weight: 800;
@@ -293,7 +417,7 @@
         margin-bottom: 1rem;
         letter-spacing: -0.02em;
       }
-      
+
       .solution-intro {
         text-align: center;
         color: #9ca3af;
@@ -301,34 +425,34 @@
         max-width: 600px;
         margin: 0 auto 4rem;
       }
-      
+
       .solutions {
         display: flex;
         flex-direction: column;
         gap: 4rem;
       }
-      
+
       .solution-card {
         display: grid;
         gap: 2rem;
         align-items: center;
       }
-      
+
       @media (min-width: 768px) {
         .solution-card {
           grid-template-columns: 1fr 1fr;
           gap: 4rem;
         }
-        
+
         .solution-card:nth-child(even) .solution-visual {
           order: -1;
         }
       }
-      
+
       .solution-content {
         max-width: 480px;
       }
-      
+
       .solution-label {
         display: inline-flex;
         align-items: center;
@@ -340,11 +464,11 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
       }
-      
+
       .solution-label-icon {
         font-size: 1.25rem;
       }
-      
+
       .solution-content h3 {
         font-size: clamp(1.5rem, 3vw, 2rem);
         font-weight: 800;
@@ -352,13 +476,13 @@
         letter-spacing: -0.02em;
         line-height: 1.2;
       }
-      
+
       .solution-content p {
         color: #9ca3af;
         margin-bottom: 1.5rem;
         font-size: 1.0625rem;
       }
-      
+
       .solution-result {
         display: flex;
         align-items: center;
@@ -368,7 +492,7 @@
         border: 1px solid rgba(16, 185, 129, 0.25);
         border-radius: 12px;
       }
-      
+
       .result-icon {
         width: 36px;
         height: 36px;
@@ -378,13 +502,14 @@
         align-items: center;
         justify-content: center;
         font-size: 1.125rem;
+        flex-shrink: 0;
       }
-      
+
       .result-text {
         font-weight: 600;
         color: #6ee7b7;
       }
-      
+
       .result-text span {
         display: block;
         font-size: 0.8125rem;
@@ -392,7 +517,7 @@
         color: #9ca3af;
         margin-top: 0.125rem;
       }
-      
+
       .solution-visual {
         position: relative;
         aspect-ratio: 4/3;
@@ -404,12 +529,7 @@
         align-items: center;
         justify-content: center;
       }
-      
-      .visual-icon {
-        font-size: 5rem;
-        opacity: 0.3;
-      }
-      
+
       .visual-mockup {
         position: absolute;
         inset: 1rem;
@@ -420,676 +540,360 @@
         flex-direction: column;
         gap: 0.75rem;
       }
-      
-      .mockup-line {
-        height: 12px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 6px;
-      }
-      
-      .mockup-line:nth-child(1) { width: 60%; }
-      .mockup-line:nth-child(2) { width: 80%; }
-      .mockup-line:nth-child(3) { width: 45%; }
-      
-      .mockup-accent {
-        width: 100%;
-        height: 60px;
-        background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(99, 102, 241, 0.2) 100%);
-        border-radius: 8px;
-        margin-top: auto;
-      }
-      
-      /* ========== CRM MOCKUP ========== */
-      .crm-mockup {
-        padding: 1rem;
+
+      /* ========== AI TRENER MOCKUP ========== */
+      .trener-mockup {
+        padding: 0.875rem;
       }
 
-      .crm-pipeline {
-        display: flex;
-        gap: 0.5rem;
-        width: 100%;
-        height: 100%;
-      }
-
-      .crm-column {
-        flex: 1;
+      .trener-chat {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-      }
-
-      .crm-column-header {
-        font-size: 0.625rem;
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.4);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        padding-bottom: 0.375rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .crm-deal {
-        height: 28px;
-        background: rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.25);
-        border-radius: 6px;
-      }
-
-      .crm-deal.active {
-        background: rgba(34, 211, 238, 0.15);
-        border-color: rgba(34, 211, 238, 0.3);
-      }
-
-      .crm-deal.done {
-        background: rgba(16, 185, 129, 0.15);
-        border-color: rgba(16, 185, 129, 0.3);
-      }
-
-      /* ========== VOICE MOCKUP ========== */
-      .voice-mockup {
-        padding: 1.25rem;
-      }
-
-      .voice-ui {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
         height: 100%;
         justify-content: center;
       }
 
-      .voice-waveform {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        height: 60px;
-      }
-
-      .wave-bar {
-        width: 6px;
-        background: linear-gradient(180deg, #8b5cf6 0%, #6366f1 100%);
-        border-radius: 3px;
-        animation: waveAnim 1.2s ease-in-out infinite alternate;
-      }
-
-      .wave-bar:nth-child(2) { animation-delay: 0.1s; }
-      .wave-bar:nth-child(3) { animation-delay: 0.2s; }
-      .wave-bar:nth-child(4) { animation-delay: 0.3s; }
-      .wave-bar:nth-child(5) { animation-delay: 0.4s; }
-      .wave-bar:nth-child(6) { animation-delay: 0.5s; }
-      .wave-bar:nth-child(7) { animation-delay: 0.6s; }
-      .wave-bar:nth-child(8) { animation-delay: 0.7s; }
-      .wave-bar:nth-child(9) { animation-delay: 0.8s; }
-      .wave-bar:nth-child(10) { animation-delay: 0.9s; }
-
-      @keyframes waveAnim {
-        0% { transform: scaleY(0.4); opacity: 0.5; }
-        100% { transform: scaleY(1); opacity: 1; }
-      }
-
-      .voice-transcript {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.75rem;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 8px;
-      }
-
-      .voice-transcript .mockup-line:nth-child(1) { width: 85%; }
-      .voice-transcript .mockup-line:nth-child(2) { width: 60%; }
-
-      /* ========== STAGING MOCKUP (WnętrzeAI) ========== */
-      .staging-mockup {
-        padding: 1.25rem;
-      }
-
-      .staging-ui {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        height: 100%;
-        width: 100%;
-      }
-
-      .staging-before,
-      .staging-after {
-        flex: 1;
-        position: relative;
-        height: 80%;
-      }
-
-      .staging-label-tag {
-        position: absolute;
-        top: 0.5rem;
-        left: 0.5rem;
-        font-size: 0.5625rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        padding: 0.2rem 0.5rem;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 4px;
-        color: rgba(255, 255, 255, 0.5);
-        z-index: 2;
-      }
-
-      .staging-label-after {
-        background: rgba(139, 92, 246, 0.25);
-        border-color: rgba(139, 92, 246, 0.4);
-        color: #c4b5fd;
-      }
-
-      .staging-room {
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 8px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .staging-wall {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 55%;
-        background: rgba(255, 255, 255, 0.02);
-      }
-
-      .staging-floor {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 45%;
-        background: rgba(255, 255, 255, 0.04);
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-      }
-
-      .staging-window {
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40%;
-        height: 30%;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 2px;
-        background: rgba(59, 130, 246, 0.08);
-      }
-
-      .staging-room-furnished {
-        background: rgba(139, 92, 246, 0.05);
-        border-color: rgba(139, 92, 246, 0.2);
-      }
-
-      .staging-sofa {
-        position: absolute;
-        bottom: 20%;
-        left: 10%;
-        width: 50%;
-        height: 18%;
-        background: rgba(139, 92, 246, 0.3);
-        border-radius: 4px 4px 2px 2px;
-        border: 1px solid rgba(139, 92, 246, 0.4);
-      }
-
-      .staging-table {
-        position: absolute;
-        bottom: 22%;
-        right: 12%;
-        width: 22%;
-        height: 12%;
-        background: rgba(236, 72, 153, 0.2);
-        border-radius: 3px;
-        border: 1px solid rgba(236, 72, 153, 0.3);
-      }
-
-      .staging-plant {
-        position: absolute;
-        bottom: 18%;
-        right: 8%;
-        width: 8%;
-        height: 28%;
-        background: rgba(16, 185, 129, 0.3);
-        border-radius: 50% 50% 2px 2px;
-        border: 1px solid rgba(16, 185, 129, 0.4);
-      }
-
-      .staging-divider {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.375rem;
-        flex-shrink: 0;
-      }
-
-      .staging-divider-line {
-        width: 1px;
-        height: 2rem;
-        background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.4), transparent);
-      }
-
-      .staging-divider-icon {
-        font-size: 0.875rem;
-        animation: pulse-staging 2s ease-in-out infinite;
-      }
-
-      @keyframes pulse-staging {
-        0%, 100% { opacity: 0.6; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.2); }
-      }
-
-      /* ========== DOCS CHECKLIST (Asystent Dokumentów) ========== */
-      .docs-checklist {
-        margin-top: 1.5rem;
-        padding: 1.25rem;
-        background: rgba(139, 92, 246, 0.05);
-        border: 1px solid rgba(139, 92, 246, 0.15);
-        border-radius: 14px;
-      }
-
-      .docs-checklist-header {
-        display: flex;
-        align-items: center;
-        gap: 0.625rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .docs-checklist-icon {
-        font-size: 1.25rem;
-      }
-
-      .docs-checklist-title {
-        font-size: 0.875rem;
-        font-weight: 700;
-        color: #e5e7eb;
-      }
-
-      .docs-checklist-subtitle {
-        font-size: 0.75rem;
-        color: #6b7280;
-      }
-
-      .docs-list {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 0 2.125rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-      }
-
-      .docs-list li {
-        position: relative;
-        padding-left: 1.25rem;
-        font-size: 0.8125rem;
-        color: #9ca3af;
-      }
-
-      .docs-list li::before {
-        content: '☐';
-        position: absolute;
-        left: 0;
-        color: #a78bfa;
-        font-size: 0.75rem;
-      }
-
-      /* ========== DOCS MOCKUP ========== */
-      .docs-mockup {
-        padding: 1.25rem;
-      }
-
-      .docs-ui {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        height: 100%;
-        justify-content: center;
-      }
-
-      .docs-search-bar {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.625rem 0.875rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-      }
-
-      .docs-search-icon {
-        font-size: 0.75rem;
-        opacity: 0.5;
-      }
-
-      .docs-search-text {
-        font-size: 0.6875rem;
-        color: #6b7280;
-      }
-
-      .docs-result-card {
-        padding: 0.75rem;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+      .trener-msg {
+        max-width: 85%;
+        padding: 0.5rem 0.75rem;
         border-radius: 10px;
-      }
-
-      .docs-result-header {
-        display: flex;
-        gap: 0.375rem;
-        margin-bottom: 0.625rem;
-      }
-
-      .docs-result-badge {
-        font-size: 0.5625rem;
-        font-weight: 600;
-        padding: 0.2rem 0.5rem;
-        background: rgba(139, 92, 246, 0.2);
-        border: 1px solid rgba(139, 92, 246, 0.3);
-        border-radius: 4px;
-        color: #c4b5fd;
-      }
-
-      .docs-result-badge-alt {
-        background: rgba(59, 130, 246, 0.15);
-        border-color: rgba(59, 130, 246, 0.3);
-        color: #93c5fd;
-      }
-
-      .docs-result-items {
-        display: flex;
-        flex-direction: column;
-        gap: 0.375rem;
-      }
-
-      .docs-result-item {
-        display: flex;
-        align-items: center;
-        gap: 0.375rem;
         font-size: 0.625rem;
-        color: #6b7280;
-      }
-
-      .docs-result-item.done {
-        color: #9ca3af;
-      }
-
-      .docs-check {
-        font-size: 0.625rem;
-        color: #10b981;
-        font-weight: 700;
-      }
-
-      .docs-check.pending {
-        color: #4b5563;
-      }
-
-      .docs-progress {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .docs-progress-bar {
-        flex: 1;
-        height: 4px;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 2px;
-        overflow: hidden;
-      }
-
-      .docs-progress-fill {
-        width: 60%;
-        height: 100%;
-        background: linear-gradient(90deg, #8b5cf6, #6366f1);
-        border-radius: 2px;
-      }
-
-      .docs-progress-text {
-        font-size: 0.5625rem;
-        color: #6b7280;
-        white-space: nowrap;
-      }
-
-      /* ========== WHATSAPP MOCKUP ========== */
-      .wa-mockup {
-        padding: 0;
-        overflow: hidden;
-      }
-
-      .wa-ui {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-
-      .wa-header {
-        display: flex;
-        align-items: center;
-        gap: 0.625rem;
-        padding: 0.75rem 1rem;
-        background: rgba(37, 211, 102, 0.1);
-        border-bottom: 1px solid rgba(37, 211, 102, 0.15);
-      }
-
-      .wa-avatar {
-        width: 32px;
-        height: 32px;
-        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 0.75rem;
-      }
-
-      .wa-header-name {
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: #e5e7eb;
-      }
-
-      .wa-header-status {
-        font-size: 0.5625rem;
-        color: #25d366;
-      }
-
-      .wa-messages {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.75rem;
-        overflow: hidden;
-      }
-
-      .wa-msg {
-        max-width: 80%;
-        padding: 0.5rem 0.625rem;
-        border-radius: 8px;
-        font-size: 0.5625rem;
         line-height: 1.5;
       }
 
-      .wa-msg-sent {
+      .trener-msg-client {
+        align-self: flex-start;
+        background: rgba(239, 68, 68, 0.12);
+        border: 1px solid rgba(239, 68, 68, 0.25);
+        color: #fca5a5;
+      }
+
+      .trener-msg-client .trener-sender {
+        font-weight: 700;
+        font-size: 0.5625rem;
+        color: #f87171;
+        margin-bottom: 0.125rem;
+      }
+
+      .trener-msg-ai {
         align-self: flex-end;
-        background: rgba(139, 92, 246, 0.2);
+        background: rgba(139, 92, 246, 0.15);
         border: 1px solid rgba(139, 92, 246, 0.3);
         color: #d1d5db;
-        border-bottom-right-radius: 2px;
       }
 
-      .wa-msg-received {
-        align-self: flex-start;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: #9ca3af;
-        border-bottom-left-radius: 2px;
-      }
-
-      .wa-msg-received strong {
-        color: #c4b5fd;
+      .trener-msg-ai .trener-sender {
+        font-weight: 700;
         font-size: 0.5625rem;
+        color: #a78bfa;
+        margin-bottom: 0.125rem;
       }
 
-      .wa-msg-typing {
-        padding: 0.625rem 0.75rem;
-      }
-
-      .wa-typing-dots {
-        display: flex;
-        gap: 4px;
-      }
-
-      .wa-typing-dots span {
-        width: 6px;
-        height: 6px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        animation: waTyping 1.4s ease-in-out infinite;
-      }
-
-      .wa-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-      .wa-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-      @keyframes waTyping {
-        0%, 60%, 100% { opacity: 0.3; transform: scale(1); }
-        30% { opacity: 1; transform: scale(1.2); }
-      }
-
-      /* ========== KW SCANNER MOCKUP ========== */
-      .kw-mockup {
-        padding: 0;
-        overflow: hidden;
-      }
-
-      .kw-ui {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-
-      .kw-header-bar {
+      .trener-score {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 0.625rem 1rem;
-        background: rgba(139, 92, 246, 0.08);
-        border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
+        padding: 0.375rem 0.75rem;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        border-radius: 6px;
+        font-size: 0.5625rem;
+        color: #6ee7b7;
+        font-weight: 600;
       }
 
-      .kw-header-title {
-        font-size: 0.6875rem;
-        font-weight: 700;
-        color: #d1d5db;
+      /* ========== SMART MAILE MOCKUP ========== */
+      .maile-mockup {
+        padding: 0.875rem;
       }
 
-      .kw-header-live {
-        font-size: 0.5rem;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        padding: 0.15rem 0.4rem;
-        background: rgba(239, 68, 68, 0.25);
-        border: 1px solid rgba(239, 68, 68, 0.4);
-        border-radius: 3px;
-        color: #fca5a5;
-        animation: pulse-staging 2s ease-in-out infinite;
-      }
-
-      .kw-entries {
-        flex: 1;
+      .maile-ui {
         display: flex;
         flex-direction: column;
-        gap: 0.375rem;
-        padding: 0.625rem;
-        overflow: hidden;
+        gap: 0.5rem;
+        height: 100%;
+        justify-content: center;
       }
 
-      .kw-entry {
+      .maile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0.375rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .maile-to {
+        font-size: 0.5625rem;
+        color: #6b7280;
+      }
+
+      .maile-to strong {
+        color: #9ca3af;
+      }
+
+      .maile-badge-auto {
+        font-size: 0.4375rem;
+        font-weight: 700;
+        padding: 0.15rem 0.4rem;
+        background: rgba(139, 92, 246, 0.2);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        border-radius: 3px;
+        color: #c4b5fd;
+        letter-spacing: 0.05em;
+      }
+
+      .maile-subject {
+        font-size: 0.6875rem;
+        font-weight: 700;
+        color: #e5e7eb;
+      }
+
+      .maile-body {
+        font-size: 0.5625rem;
+        color: #6b7280;
+        line-height: 1.6;
+      }
+
+      .maile-body .highlight {
+        color: #a78bfa;
+        font-weight: 600;
+      }
+
+      .maile-actions {
+        display: flex;
+        gap: 0.375rem;
+        margin-top: 0.25rem;
+      }
+
+      .maile-btn {
+        padding: 0.3rem 0.625rem;
+        border-radius: 5px;
+        font-size: 0.5rem;
+        font-weight: 700;
+        border: none;
+      }
+
+      .maile-btn-send {
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        color: white;
+      }
+
+      .maile-btn-edit {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #6b7280;
+      }
+
+      .maile-queue {
+        font-size: 0.5rem;
+        color: #4b5563;
+        text-align: center;
+        padding-top: 0.25rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      /* ========== SKANER OFERT MOCKUP ========== */
+      .skaner-mockup {
+        padding: 0.875rem;
+      }
+
+      .skaner-ui {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: 100%;
+        justify-content: center;
+      }
+
+      .skaner-offer {
         padding: 0.5rem 0.625rem;
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 6px;
+        border-radius: 8px;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
       }
 
-      .kw-entry-new {
+      .skaner-offer-new {
         background: rgba(139, 92, 246, 0.06);
         border-color: rgba(139, 92, 246, 0.2);
       }
 
-      .kw-entry-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 0.25rem;
+      .skaner-offer-thumb {
+        width: 36px;
+        height: 36px;
+        background: rgba(139, 92, 246, 0.15);
+        border-radius: 6px;
+        flex-shrink: 0;
       }
 
-      .kw-entry-badge {
-        font-size: 0.4375rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        padding: 0.1rem 0.35rem;
-        border-radius: 3px;
+      .skaner-offer-info {
+        flex: 1;
+        min-width: 0;
       }
 
-      .kw-badge-new {
-        background: rgba(139, 92, 246, 0.25);
-        border: 1px solid rgba(139, 92, 246, 0.4);
-        color: #c4b5fd;
-      }
-
-      .kw-badge-hipoteka {
-        background: rgba(34, 211, 238, 0.15);
-        border: 1px solid rgba(34, 211, 238, 0.3);
-        color: #67e8f9;
-      }
-
-      .kw-badge-sprzedaz {
-        background: rgba(16, 185, 129, 0.15);
-        border: 1px solid rgba(16, 185, 129, 0.3);
-        color: #6ee7b7;
-      }
-
-      .kw-entry-date {
-        font-size: 0.4375rem;
-        color: #4b5563;
-      }
-
-      .kw-entry-kw {
+      .skaner-offer-title {
         font-size: 0.5625rem;
         font-weight: 600;
-        color: #9ca3af;
-        font-family: monospace;
-        margin-bottom: 0.125rem;
+        color: #d1d5db;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
-      .kw-entry-detail {
-        font-size: 0.5rem;
-        color: #6b7280;
-      }
-
-      .kw-footer {
-        padding: 0.5rem 1rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        font-size: 0.5625rem;
+      .skaner-offer-meta {
+        font-size: 0.4375rem;
         color: #4b5563;
-        text-align: center;
       }
+
+      .skaner-offer-price {
+        font-size: 0.5625rem;
+        font-weight: 700;
+        color: #a78bfa;
+        white-space: nowrap;
+      }
+
+      .skaner-badge-new {
+        font-size: 0.375rem;
+        font-weight: 800;
+        padding: 0.1rem 0.3rem;
+        background: rgba(16, 185, 129, 0.2);
+        border: 1px solid rgba(16, 185, 129, 0.35);
+        border-radius: 3px;
+        color: #6ee7b7;
+        letter-spacing: 0.08em;
+      }
+
+      .skaner-time {
+        font-size: 0.4375rem;
+        color: #10b981;
+        font-weight: 600;
+      }
+
+      /* ========== MID-PAGE CTA BANNER ========== */
+      .mid-cta {
+        text-align: center;
+        padding: 4rem 1.5rem;
+        background: linear-gradient(180deg, rgba(139, 92, 246, 0.08) 0%, transparent 100%);
+        border-top: 1px solid rgba(139, 92, 246, 0.15);
+        border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+      }
+
+      .mid-cta h3 {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        font-weight: 800;
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.02em;
+      }
+
+      .mid-cta p {
+        color: #9ca3af;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .mid-cta .cta-primary {
+        animation: none;
+        font-size: 1rem;
+        padding: 1rem 2rem;
+      }
+
+      /* ========== MORE TOOLS GRID ========== */
+      .more-tools-section {
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .more-tools-section h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .more-tools-intro {
+        text-align: center;
+        color: #9ca3af;
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 640px) {
+        .tools-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 900px) {
+        .tools-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .tool-card {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        transition: all 0.3s;
+      }
+
+      .tool-card:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(139, 92, 246, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .tool-card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.375rem;
+        margin-bottom: 1rem;
+      }
+
+      .tool-card h4 {
+        font-size: 1.0625rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: white;
+      }
+
+      .tool-card p {
+        font-size: 0.875rem;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+
+      .tool-icon-violet { background: rgba(139, 92, 246, 0.15); }
+      .tool-icon-cyan { background: rgba(34, 211, 238, 0.15); }
+      .tool-icon-green { background: rgba(16, 185, 129, 0.15); }
+      .tool-icon-pink { background: rgba(236, 72, 153, 0.15); }
+      .tool-icon-amber { background: rgba(245, 158, 11, 0.15); }
+      .tool-icon-blue { background: rgba(59, 130, 246, 0.15); }
 
       /* ========== SOCIAL PROOF ========== */
       .social-section {
-        background: rgba(0, 0, 0, 0.2);
         text-align: center;
       }
-      
+
       .social-stat {
         display: inline-flex;
         align-items: center;
@@ -1098,30 +902,30 @@
         font-weight: 800;
         margin-bottom: 0.5rem;
       }
-      
+
       .social-stat .number {
         color: #a78bfa;
       }
-      
+
       .social-subtitle {
         color: #9ca3af;
         font-size: 1.125rem;
         margin-bottom: 3rem;
       }
-      
+
       .testimonials {
         display: grid;
         gap: 1.5rem;
         max-width: 900px;
         margin: 0 auto;
       }
-      
+
       @media (min-width: 640px) {
         .testimonials {
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
         }
       }
-      
+
       .testimonial {
         padding: 1.5rem;
         background: rgba(255, 255, 255, 0.03);
@@ -1129,20 +933,20 @@
         border-radius: 16px;
         text-align: left;
       }
-      
+
       .testimonial-quote {
-        font-size: 1rem;
+        font-size: 0.9375rem;
         color: #d1d5db;
         margin-bottom: 1rem;
         font-style: italic;
       }
-      
+
       .testimonial-author {
         display: flex;
         align-items: center;
         gap: 0.75rem;
       }
-      
+
       .author-avatar {
         width: 40px;
         height: 40px;
@@ -1154,58 +958,129 @@
         font-weight: 700;
         font-size: 0.875rem;
       }
-      
+
       .author-info {
         font-size: 0.875rem;
       }
-      
+
       .author-name {
         font-weight: 600;
         color: white;
       }
-      
+
       .author-role {
         color: #6b7280;
       }
-      
+
+      /* ========== FAQ ========== */
+      .faq-section h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 3rem;
+        letter-spacing: -0.02em;
+      }
+
+      .faq-list {
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 0;
+        cursor: pointer;
+        width: 100%;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.0625rem;
+        font-weight: 600;
+        text-align: left;
+        font-family: inherit;
+        transition: color 0.2s;
+      }
+
+      .faq-question:hover {
+        color: #a78bfa;
+      }
+
+      .faq-chevron {
+        font-size: 1.25rem;
+        color: #4b5563;
+        transition: transform 0.3s;
+        flex-shrink: 0;
+        margin-left: 1rem;
+      }
+
+      .faq-item.active .faq-chevron {
+        transform: rotate(180deg);
+        color: #a78bfa;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 200px;
+      }
+
+      .faq-answer p {
+        padding-bottom: 1.25rem;
+        color: #9ca3af;
+        font-size: 0.9375rem;
+        line-height: 1.7;
+      }
+
       /* ========== FINAL CTA ========== */
       .final-cta {
         text-align: center;
         padding: 8rem 2rem;
       }
-      
+
       .final-cta h2 {
         font-size: clamp(2rem, 5vw, 3rem);
         font-weight: 900;
         margin-bottom: 1rem;
         letter-spacing: -0.03em;
       }
-      
+
       .final-cta-subtitle {
         color: #9ca3af;
         font-size: 1.25rem;
         max-width: 550px;
         margin: 0 auto 2.5rem;
       }
-      
-      /* Form */
+
       .form-wrapper {
         max-width: 500px;
         margin: 0 auto;
       }
-      
+
       .form {
         display: flex;
         flex-direction: column;
         gap: 1rem;
       }
-      
+
       @media (min-width: 500px) {
         .form {
           flex-direction: row;
         }
       }
-      
+
       .input {
         flex: 1;
         padding: 1rem 1.5rem;
@@ -1217,16 +1092,16 @@
         outline: none;
         transition: all 0.3s;
       }
-      
+
       .input::placeholder {
         color: #6b7280;
       }
-      
+
       .input:focus {
         border-color: rgba(139, 92, 246, 0.5);
         box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
       }
-      
+
       .btn-submit {
         padding: 1rem 2rem;
         background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
@@ -1240,12 +1115,18 @@
         white-space: nowrap;
         box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
       }
-      
+
       .btn-submit:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 30px rgba(139, 92, 246, 0.45);
       }
-      
+
+      .btn-submit:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
       .form-benefits {
         display: flex;
         flex-wrap: wrap;
@@ -1253,7 +1134,7 @@
         gap: 1.5rem;
         margin-top: 1.5rem;
       }
-      
+
       .form-benefit {
         display: flex;
         align-items: center;
@@ -1261,12 +1142,11 @@
         font-size: 0.875rem;
         color: #9ca3af;
       }
-      
+
       .check-icon {
         color: #10b981;
       }
-      
-      /* Success state */
+
       .success-message {
         display: none;
         padding: 1.25rem 1.5rem;
@@ -1277,11 +1157,23 @@
         font-weight: 600;
         font-size: 1.125rem;
       }
-      
+
+      .error-message {
+        display: none;
+        padding: 1rem 1.5rem;
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        border-radius: 14px;
+        color: #fca5a5;
+        font-size: 0.9375rem;
+        margin-top: 0.75rem;
+      }
+
       .form-wrapper.success .form { display: none; }
       .form-wrapper.success .form-benefits { display: none; }
       .form-wrapper.success .success-message { display: block; }
-      
+      .form-wrapper.error .error-message { display: block; }
+
       /* Footer */
       .footer {
         text-align: center;
@@ -1290,7 +1182,7 @@
         color: #4b5563;
         font-size: 0.875rem;
       }
-      
+
       /* Scroll arrow */
       .scroll-arrow {
         position: absolute;
@@ -1337,7 +1229,7 @@
     </style>
   </head>
   <body>
-    
+
     <!-- Animated background -->
     <div class="bg-animation">
       <div class="orb orb-1"></div>
@@ -1347,41 +1239,62 @@
     </div>
 
     <div class="content">
-      
+
+      <!-- ========== NAVBAR ========== -->
+      <nav class="navbar">
+        <div class="navbar-inner">
+          <a href="#" class="navbar-logo">
+            <div class="navbar-logo-icon">A</div>
+            <span class="navbar-logo-text">Agentivo</span>
+          </a>
+          <div class="navbar-links">
+            <a href="#funkcje">Funkcje</a>
+            <a href="#opinie">Opinie</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <a href="#zapisz-sie" class="navbar-cta">Zapisz się na presale →</a>
+        </div>
+      </nav>
+
       <!-- ========== HERO ========== -->
       <section class="section hero">
         <div class="container">
-          
+
           <div class="logo">
             <div class="logo-icon">A</div>
             <span class="logo-text">Agentivo</span>
           </div>
-          
+
           <h1>
             Zamykaj <span class="gradient-text">40% więcej transakcji.</span><br>
             Bez dodatkowej pracy.
           </h1>
-          
+
           <p class="hero-subtitle">
-            AI wysyła follow-upy, skanuje oferty i trenuje Twoje negocjacje.
-            Ty zamykasz transakcje.
+            9 narzędzi AI dla pośredników — od follow-upów i trenera negocjacji,
+            przez virtual staging, po monitoring ksiąg wieczystych. Ty zamykasz transakcje.
           </p>
 
           <a href="#zapisz-sie" class="cta-primary">
-            Kup w presale — 99 PLN/mies
+            Zapisz się na presale — 99 PLN/mies
             <span class="cta-arrow">→</span>
           </a>
 
           <p class="cta-subtext">
-            <span class="price-old">199 PLN/mies</span> <strong>99 PLN/mies</strong> — cena presale na zawsze
+            <span class="price-old">199 PLN/mies</span> <strong>99 PLN/mies</strong> — cena presale zostaje z Tobą na zawsze
           </p>
+
+          <div class="urgency-badge">
+            <span class="urgency-dot"></span>
+            Zostało <strong>73 z 200</strong> miejsc w cenie presale
+          </div>
 
         </div>
         <div class="scroll-arrow">
           <a href="#problem"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
         </div>
       </section>
-      
+
       <!-- ========== PROBLEM ========== -->
       <section class="section problem-section" id="problem">
         <div class="container">
@@ -1390,7 +1303,7 @@
           <p class="problem-intro">
             Każdy pośrednik traci <strong>15+ godzin tygodniowo</strong> na rzeczy, które nie przynoszą prowizji.
           </p>
-          
+
           <div class="pain-points">
             <div class="pain-point">
               <div class="pain-icon">📧</div>
@@ -1414,21 +1327,21 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       </section>
-      
-      <!-- ========== SOLUTIONS ========== -->
-      <section class="section solution-section">
+
+      <!-- ========== FLAGSHIP SOLUTIONS (3) ========== -->
+      <section class="section solution-section" id="funkcje">
         <div class="container">
-          
-          <h2>Więcej prowizji. Mniej godzin pracy.</h2>
+
+          <h2>Twoje 3 najważniejsze narzędzia</h2>
           <p class="solution-intro">
-            Dziewięć narzędzi AI, które pracują na Twoje wyniki 24/7.
+            Flagowe moduły Agentivo, które zmienią Twoją codzienną pracę.
           </p>
-          
+
           <div class="solutions">
-            
+
             <!-- AI Trener -->
             <div class="solution-card">
               <div class="solution-content">
@@ -1438,7 +1351,7 @@
                 </div>
                 <h3>Ćwicz 100 scenariuszy, zanim spotkasz klienta</h3>
                 <p>
-                  Symuluj najtrudniejsze rozmowy z AI. "Za drogo", "muszę się zastanowić", 
+                  Symuluj najtrudniejsze rozmowy z AI. "Za drogo", "muszę się zastanowić",
                   "znalazłem tańsze" — przećwicz wszystko i idź na spotkanie pewny swoich argumentów.
                 </p>
                 <div class="solution-result">
@@ -1450,15 +1363,28 @@
                 </div>
               </div>
               <div class="solution-visual">
-                <div class="visual-mockup">
-                  <div class="mockup-line"></div>
-                  <div class="mockup-line"></div>
-                  <div class="mockup-line"></div>
-                  <div class="mockup-accent"></div>
+                <div class="visual-mockup trener-mockup">
+                  <div class="trener-chat">
+                    <div class="trener-msg trener-msg-client">
+                      <div class="trener-sender">Klient (symulacja)</div>
+                      Panie Marku, to jest za drogo. Widziałem podobne mieszkanie za 50 tys. mniej.
+                    </div>
+                    <div class="trener-msg trener-msg-ai">
+                      <div class="trener-sender">AI podpowiedź</div>
+                      Rozumiem. Sprawdźmy razem — tamta oferta nie ma balkonu ani miejsca parkingowego. Gdy dodamy te elementy, różnica spada do 8 tys.
+                    </div>
+                    <div class="trener-msg trener-msg-client">
+                      <div class="trener-sender">Klient (symulacja)</div>
+                      Hmm, faktycznie nie pomyślałem o parkingu...
+                    </div>
+                    <div class="trener-score">
+                      Twój wynik: 87/100 — Doskonała odpowiedź na obiekcję cenową
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            
+
             <!-- Smart Maile -->
             <div class="solution-card">
               <div class="solution-content">
@@ -1468,7 +1394,7 @@
                 </div>
                 <h3>50 spersonalizowanych follow-upów dziennie. 0 Twojego czasu.</h3>
                 <p>
-                  AI pisze maile w Twoim stylu, dopasowane do każdego klienta. 
+                  AI pisze maile w Twoim stylu, dopasowane do każdego klienta.
                   Ty tylko zatwierdzasz jednym klikiem. Żaden lead nie zostanie zapomniany.
                 </p>
                 <div class="solution-result">
@@ -1480,15 +1406,29 @@
                 </div>
               </div>
               <div class="solution-visual">
-                <div class="visual-mockup">
-                  <div class="mockup-line"></div>
-                  <div class="mockup-line"></div>
-                  <div class="mockup-line"></div>
-                  <div class="mockup-accent"></div>
+                <div class="visual-mockup maile-mockup">
+                  <div class="maile-ui">
+                    <div class="maile-header">
+                      <div class="maile-to">Do: <strong>anna.kowalska@gmail.com</strong></div>
+                      <div class="maile-badge-auto">AI DRAFT</div>
+                    </div>
+                    <div class="maile-subject">Re: Mieszkanie przy ul. Kwiatowej — follow-up</div>
+                    <div class="maile-body">
+                      Dzień dobry Pani Anno,<br><br>
+                      Dziękuję za prezentację mieszkania na <span class="highlight">ul. Kwiatowej</span>.
+                      Zauważyłem, że interesowała Panią <span class="highlight">przestronna kuchnia</span> —
+                      mam jeszcze 2 podobne oferty w tej okolicy...
+                    </div>
+                    <div class="maile-actions">
+                      <div class="maile-btn maile-btn-send">Wyślij</div>
+                      <div class="maile-btn maile-btn-edit">Edytuj</div>
+                    </div>
+                    <div class="maile-queue">+12 follow-upów w kolejce na dziś</div>
+                  </div>
                 </div>
               </div>
             </div>
-            
+
             <!-- Skaner Ofert -->
             <div class="solution-card">
               <div class="solution-content">
@@ -1511,366 +1451,49 @@
                 </div>
               </div>
               <div class="solution-visual">
-                <div class="visual-mockup">
-                  <div class="mockup-line"></div>
-                  <div class="mockup-line"></div>
-                  <div class="mockup-line"></div>
-                  <div class="mockup-accent"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Smart CRM -->
-            <div class="solution-card">
-              <div class="solution-content">
-                <div class="solution-label">
-                  <span class="solution-label-icon">📊</span>
-                  Smart CRM
-                </div>
-                <h3>Każdy klient i transakcja pod kontrolą — bez Excela</h3>
-                <p>
-                  Zarządzaj pipeline'em transakcji w jednym widoku. AI automatycznie kategoryzuje klientów,
-                  przypomina o follow-upach i podpowiada, który deal ma największą szansę na zamknięcie.
-                </p>
-                <div class="solution-result">
-                  <div class="result-icon">💰</div>
-                  <div class="result-text">
-                    Zero zapomnianych klientów
-                    <span>Automatyczny pipeline i przypomnienia</span>
-                  </div>
-                </div>
-              </div>
-              <div class="solution-visual">
-                <div class="visual-mockup crm-mockup">
-                  <div class="crm-pipeline">
-                    <div class="crm-column">
-                      <div class="crm-column-header">Nowy</div>
-                      <div class="crm-deal"></div>
-                      <div class="crm-deal"></div>
-                    </div>
-                    <div class="crm-column">
-                      <div class="crm-column-header">Prezentacja</div>
-                      <div class="crm-deal active"></div>
-                    </div>
-                    <div class="crm-column">
-                      <div class="crm-column-header">Zamknięte</div>
-                      <div class="crm-deal done"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Notatki Głosowe -->
-            <div class="solution-card">
-              <div class="solution-content">
-                <div class="solution-label">
-                  <span class="solution-label-icon">🎙️</span>
-                  Voice Notes
-                </div>
-                <h3>Mów zamiast pisać — AI zrobi resztę</h3>
-                <p>
-                  Po spotkaniu z klientem nagraj 30-sekundową notatkę głosową.
-                  AI transkrybuje ją, wyciąga kluczowe ustalenia i automatycznie
-                  aktualizuje kartę klienta w CRM.
-                </p>
-                <div class="solution-result">
-                  <div class="result-icon">🎧</div>
-                  <div class="result-text">
-                    30 sek zamiast 10 min notatek
-                    <span>Voice-to-text z automatycznym podsumowaniem</span>
-                  </div>
-                </div>
-              </div>
-              <div class="solution-visual">
-                <div class="visual-mockup voice-mockup">
-                  <div class="voice-ui">
-                    <div class="voice-waveform">
-                      <div class="wave-bar" style="height: 30%;"></div>
-                      <div class="wave-bar" style="height: 60%;"></div>
-                      <div class="wave-bar" style="height: 90%;"></div>
-                      <div class="wave-bar" style="height: 45%;"></div>
-                      <div class="wave-bar" style="height: 75%;"></div>
-                      <div class="wave-bar" style="height: 50%;"></div>
-                      <div class="wave-bar" style="height: 85%;"></div>
-                      <div class="wave-bar" style="height: 35%;"></div>
-                      <div class="wave-bar" style="height: 65%;"></div>
-                      <div class="wave-bar" style="height: 40%;"></div>
-                    </div>
-                    <div class="voice-transcript">
-                      <div class="mockup-line"></div>
-                      <div class="mockup-line"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- WnętrzeAI — Virtual Staging -->
-            <div class="solution-card">
-              <div class="solution-content">
-                <div class="solution-label">
-                  <span class="solution-label-icon">🏠</span>
-                  WnętrzeAI — Virtual Staging
-                </div>
-                <h3>Puste mieszkanie urządzone w 30 sekund</h3>
-                <p>
-                  AI dodaje meble i dekoracje do zdjęć pustych wnętrz. Ogłoszenie wygląda
-                  jak z katalogu — bez wydawania 3–8 tys. PLN na tradycyjny staging.
-                  Więcej zapytań, szybsza sprzedaż.
-                </p>
-                <div class="solution-result">
-                  <div class="result-icon">📸</div>
-                  <div class="result-text">
-                    +40% więcej zapytań na ogłoszenie
-                    <span>49 PLN za render zamiast 3–8 tys. za staging</span>
-                  </div>
-                </div>
-              </div>
-              <div class="solution-visual">
-                <div class="visual-mockup staging-mockup">
-                  <div class="staging-ui">
-                    <div class="staging-before">
-                      <div class="staging-label-tag">PRZED</div>
-                      <div class="staging-room">
-                        <div class="staging-wall"></div>
-                        <div class="staging-floor"></div>
-                        <div class="staging-window"></div>
+                <div class="visual-mockup skaner-mockup">
+                  <div class="skaner-ui">
+                    <div class="skaner-offer skaner-offer-new">
+                      <div class="skaner-offer-thumb"></div>
+                      <div class="skaner-offer-info">
+                        <div class="skaner-offer-title">3 pok., 64m² — ul. Ozimska, Opole</div>
+                        <div class="skaner-offer-meta">Otodom · <span class="skaner-time">2 min temu</span></div>
+                      </div>
+                      <div>
+                        <div class="skaner-badge-new">NOWA</div>
+                        <div class="skaner-offer-price">385 000 zł</div>
                       </div>
                     </div>
-                    <div class="staging-divider">
-                      <div class="staging-divider-line"></div>
-                      <div class="staging-divider-icon">✨</div>
-                      <div class="staging-divider-line"></div>
-                    </div>
-                    <div class="staging-after">
-                      <div class="staging-label-tag staging-label-after">PO</div>
-                      <div class="staging-room staging-room-furnished">
-                        <div class="staging-wall"></div>
-                        <div class="staging-floor"></div>
-                        <div class="staging-window"></div>
-                        <div class="staging-sofa"></div>
-                        <div class="staging-table"></div>
-                        <div class="staging-plant"></div>
+                    <div class="skaner-offer skaner-offer-new">
+                      <div class="skaner-offer-thumb"></div>
+                      <div class="skaner-offer-info">
+                        <div class="skaner-offer-title">Kawalerka 28m² — os. AK, Opole</div>
+                        <div class="skaner-offer-meta">OLX · <span class="skaner-time">8 min temu</span></div>
+                      </div>
+                      <div>
+                        <div class="skaner-badge-new">NOWA</div>
+                        <div class="skaner-offer-price">198 000 zł</div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Asystent Dokumentów — Starostwo & Gmina -->
-            <div class="solution-card">
-              <div class="solution-content">
-                <div class="solution-label">
-                  <span class="solution-label-icon">📋</span>
-                  Asystent Dokumentów
-                </div>
-                <h3>Wiesz dokładnie, po co idziesz do starostwa</h3>
-                <p>
-                  Wpisz adres nieruchomości — AI generuje spersonalizowaną checklistę dokumentów
-                  do pozyskania. Wskazuje konkretną gminę, powiat i wydział. Zero zgadywania,
-                  zero straconych wizyt w urzędach.
-                </p>
-                <div class="solution-result">
-                  <div class="result-icon">✅</div>
-                  <div class="result-text">
-                    Zero straconych wizyt w urzędach
-                    <span>Kompletna checklista w 10 sekund</span>
-                  </div>
-                </div>
-                <div class="docs-checklist">
-                  <div class="docs-checklist-header">
-                    <span class="docs-checklist-icon">🏛️</span>
-                    <div>
-                      <div class="docs-checklist-title">Starostwo Powiatowe</div>
-                      <div class="docs-checklist-subtitle">Wydział Geodezji i Kartografii</div>
-                    </div>
-                  </div>
-                  <ul class="docs-list">
-                    <li>Wypis z rejestru gruntów</li>
-                    <li>Wyrys z mapy ewidencyjnej</li>
-                    <li>Kopia mapy zasadniczej</li>
-                  </ul>
-                  <div class="docs-checklist-header" style="margin-top: 0.75rem;">
-                    <span class="docs-checklist-icon">🏢</span>
-                    <div>
-                      <div class="docs-checklist-title">Urząd Gminy</div>
-                      <div class="docs-checklist-subtitle">Wydział Architektury i Planowania</div>
-                    </div>
-                  </div>
-                  <ul class="docs-list">
-                    <li>Wypis/wyrys z MPZP</li>
-                    <li>Decyzja o warunkach zabudowy</li>
-                    <li>Zaświadczenie o przeznaczeniu działki</li>
-                  </ul>
-                  <div class="docs-checklist-header" style="margin-top: 0.75rem;">
-                    <span class="docs-checklist-icon">⚖️</span>
-                    <div>
-                      <div class="docs-checklist-title">Sąd Rejonowy</div>
-                      <div class="docs-checklist-subtitle">Wydział Ksiąg Wieczystych</div>
-                    </div>
-                  </div>
-                  <ul class="docs-list">
-                    <li>Odpis zwykły/zupełny z KW</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="solution-visual">
-                <div class="visual-mockup docs-mockup">
-                  <div class="docs-ui">
-                    <div class="docs-search-bar">
-                      <span class="docs-search-icon">🔍</span>
-                      <div class="docs-search-text">ul. Kwiatowa 12, Opole...</div>
-                    </div>
-                    <div class="docs-result-card">
-                      <div class="docs-result-header">
-                        <div class="docs-result-badge">Powiat Opolski</div>
-                        <div class="docs-result-badge docs-result-badge-alt">Gmina Opole</div>
+                    <div class="skaner-offer">
+                      <div class="skaner-offer-thumb"></div>
+                      <div class="skaner-offer-info">
+                        <div class="skaner-offer-title">Dom 120m² — Komprachcice</div>
+                        <div class="skaner-offer-meta">Otodom · 1h temu</div>
                       </div>
-                      <div class="docs-result-items">
-                        <div class="docs-result-item done">
-                          <span class="docs-check">✓</span>
-                          Wypis z rej. gruntów
-                        </div>
-                        <div class="docs-result-item done">
-                          <span class="docs-check">✓</span>
-                          Wyrys z mapy ewid.
-                        </div>
-                        <div class="docs-result-item done">
-                          <span class="docs-check">✓</span>
-                          MPZP — wypis/wyrys
-                        </div>
-                        <div class="docs-result-item">
-                          <span class="docs-check pending">○</span>
-                          Odpis z KW
-                        </div>
-                        <div class="docs-result-item">
-                          <span class="docs-check pending">○</span>
-                          War. zabudowy
-                        </div>
+                      <div>
+                        <div class="skaner-offer-price">620 000 zł</div>
                       </div>
                     </div>
-                    <div class="docs-progress">
-                      <div class="docs-progress-bar">
-                        <div class="docs-progress-fill"></div>
+                    <div class="skaner-offer">
+                      <div class="skaner-offer-thumb"></div>
+                      <div class="skaner-offer-info">
+                        <div class="skaner-offer-title">2 pok., 48m² — Zaodrze, Opole</div>
+                        <div class="skaner-offer-meta">Morizon · 2h temu</div>
                       </div>
-                      <div class="docs-progress-text">3/5 dokumentów</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- WhatsApp Bot — Komunikacja z Agentivo -->
-            <div class="solution-card">
-              <div class="solution-content">
-                <div class="solution-label">
-                  <span class="solution-label-icon">💬</span>
-                  WhatsApp Bot
-                </div>
-                <h3>Twój asystent AI na WhatsAppie — 24/7</h3>
-                <p>
-                  Rozmawiaj z Agentivo przez WhatsApp jak z asystentem. Poproś o checklistę dokumentów,
-                  przygotowanie follow-upa albo podsumowanie transakcji — odpowiedź dostaniesz
-                  w kilka sekund, prosto na telefon.
-                </p>
-                <div class="solution-result">
-                  <div class="result-icon">📱</div>
-                  <div class="result-text">
-                    Dostęp do AI bez otwierania laptopa
-                    <span>WhatsApp, który znasz — z mocą AI</span>
-                  </div>
-                </div>
-              </div>
-              <div class="solution-visual">
-                <div class="visual-mockup wa-mockup">
-                  <div class="wa-ui">
-                    <div class="wa-header">
-                      <div class="wa-avatar">A</div>
-                      <div class="wa-header-info">
-                        <div class="wa-header-name">Agentivo AI</div>
-                        <div class="wa-header-status">online</div>
+                      <div>
+                        <div class="skaner-offer-price">310 000 zł</div>
                       </div>
-                    </div>
-                    <div class="wa-messages">
-                      <div class="wa-msg wa-msg-sent">Jakie dokumenty potrzebuję na Kwiatową 12?</div>
-                      <div class="wa-msg wa-msg-received">
-                        <strong>Powiat Opolski:</strong><br>
-                        ☐ Wypis z rej. gruntów<br>
-                        ☐ Wyrys z mapy ewid.<br>
-                        <strong>Gmina Opole:</strong><br>
-                        ☐ MPZP — wypis/wyrys<br>
-                        ☐ Odpis z KW
-                      </div>
-                      <div class="wa-msg wa-msg-sent">Napisz follow-up do Kowalskiego</div>
-                      <div class="wa-msg wa-msg-received wa-msg-typing">
-                        <div class="wa-typing-dots">
-                          <span></span><span></span><span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Skaner KW Konkurencji -->
-            <div class="solution-card">
-              <div class="solution-content">
-                <div class="solution-label">
-                  <span class="solution-label-icon">🔓</span>
-                  Skaner KW Konkurencji
-                </div>
-                <h3>Sprawdź, co robi konkurencja — zanim ona sprawdzi Ciebie</h3>
-                <p>
-                  AI analizuje księgi wieczyste i wyłapuje zmiany właścicieli, obciążenia hipoteczne
-                  i nowe wpisy w Twoim rejonie. Dowiedz się, kto kupuje, kto sprzedaje
-                  i które nieruchomości wracają na rynek — szybciej niż konkurencja.
-                </p>
-                <div class="solution-result">
-                  <div class="result-icon">🎯</div>
-                  <div class="result-text">
-                    Leady, o których inni nie wiedzą
-                    <span>Monitoring zmian w KW na wybranym obszarze</span>
-                  </div>
-                </div>
-              </div>
-              <div class="solution-visual">
-                <div class="visual-mockup kw-mockup">
-                  <div class="kw-ui">
-                    <div class="kw-header-bar">
-                      <span class="kw-header-title">Monitoring KW — Opole</span>
-                      <span class="kw-header-live">LIVE</span>
-                    </div>
-                    <div class="kw-entries">
-                      <div class="kw-entry kw-entry-new">
-                        <div class="kw-entry-top">
-                          <span class="kw-entry-badge kw-badge-new">NOWY WPIS</span>
-                          <span class="kw-entry-date">dziś, 09:14</span>
-                        </div>
-                        <div class="kw-entry-kw">OP1O/00084521/3</div>
-                        <div class="kw-entry-detail">Zmiana właściciela — ul. Ozimska 41</div>
-                      </div>
-                      <div class="kw-entry">
-                        <div class="kw-entry-top">
-                          <span class="kw-entry-badge kw-badge-hipoteka">HIPOTEKA</span>
-                          <span class="kw-entry-date">wczoraj</span>
-                        </div>
-                        <div class="kw-entry-kw">OP1O/00091237/8</div>
-                        <div class="kw-entry-detail">Wykreślenie hipoteki — Reymonta 15</div>
-                      </div>
-                      <div class="kw-entry">
-                        <div class="kw-entry-top">
-                          <span class="kw-entry-badge kw-badge-sprzedaz">SPRZEDAŻ</span>
-                          <span class="kw-entry-date">2 dni temu</span>
-                        </div>
-                        <div class="kw-entry-kw">OP1O/00076892/1</div>
-                        <div class="kw-entry-detail">Akt notarialny — Plebiscytowa 3/7</div>
-                      </div>
-                    </div>
-                    <div class="kw-footer">
-                      <span>23 zmiany w tym tygodniu</span>
                     </div>
                   </div>
                 </div>
@@ -1882,19 +1505,82 @@
         </div>
       </section>
 
-      <!-- ========== SOCIAL PROOF ========== -->
-      <section class="section social-section">
+      <!-- ========== MID-PAGE CTA ========== -->
+      <section class="mid-cta">
         <div class="container">
-          
+          <h3>To dopiero początek. <span class="gradient-text">Agentivo ma 9 narzędzi.</span></h3>
+          <p>Wszystko za 99 PLN/mies w presale — cena zostaje z Tobą na zawsze.</p>
+          <a href="#zapisz-sie" class="cta-primary">
+            Zapisz się na presale →
+          </a>
+        </div>
+      </section>
+
+      <!-- ========== MORE TOOLS (compact grid) ========== -->
+      <section class="section more-tools-section">
+        <div class="container">
+
+          <h2>...i 6 kolejnych narzędzi</h2>
+          <p class="more-tools-intro">
+            Kompletny ekosystem AI, który pokrywa każdy aspekt pracy pośrednika.
+          </p>
+
+          <div class="tools-grid">
+
+            <div class="tool-card">
+              <div class="tool-card-icon tool-icon-violet">📊</div>
+              <h4>Smart CRM</h4>
+              <p>Pipeline transakcji w jednym widoku. AI kategoryzuje klientów i przypomina o follow-upach.</p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-icon tool-icon-cyan">🎙️</div>
+              <h4>Voice Notes</h4>
+              <p>Nagraj 30 sek. notatkę po spotkaniu — AI transkrybuje i aktualizuje kartę klienta w CRM.</p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-icon tool-icon-pink">🏠</div>
+              <h4>WnętrzeAI — Virtual Staging</h4>
+              <p>AI dodaje meble do zdjęć pustych wnętrz w 30 sek. +40% zapytań na ogłoszenie za 49 PLN.</p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-icon tool-icon-amber">📋</div>
+              <h4>Asystent Dokumentów</h4>
+              <p>Wpisz adres — dostaniesz checklistę dokumentów ze starostwa, gminy i sądu. Zero straconych wizyt.</p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-icon tool-icon-green">💬</div>
+              <h4>WhatsApp Bot</h4>
+              <p>Rozmawiaj z Agentivo przez WhatsApp. Follow-up, checklista, podsumowanie — prosto na telefon.</p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-icon tool-icon-blue">🔓</div>
+              <h4>Skaner KW Konkurencji</h4>
+              <p>Monitoring ksiąg wieczystych w Twoim rejonie. Zmiany właścicieli, hipoteki, sprzedaże — zanim inni się dowiedzą.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========== SOCIAL PROOF ========== -->
+      <section class="section social-section" id="opinie">
+        <div class="container">
+
           <div class="social-stat">
             <span class="number">127+</span> pośredników
           </div>
-          <p class="social-subtitle">już dołączyło do presale</p>
-          
+          <p class="social-subtitle">zapisało się na presale i czeka na premierę</p>
+
           <div class="testimonials">
             <div class="testimonial">
               <p class="testimonial-quote">
-                "Wreszcie coś, co rozumie specyfikę naszej branży. Nie mogę się doczekać AI Trenera — 
+                "Wreszcie coś, co rozumie specyfikę naszej branży. Nie mogę się doczekać AI Trenera —
                 moi juniorzy będą mogli ćwiczyć bez stresu."
               </p>
               <div class="testimonial-author">
@@ -1907,7 +1593,7 @@
             </div>
             <div class="testimonial">
               <p class="testimonial-quote">
-                "Tracę godziny na przeglądanie portali. Skaner ofert to game changer — 
+                "Tracę godziny na przeglądanie portali. Skaner ofert to game changer —
                 będę wiedziała o nowych ofertach zanim inni włączą komputer."
               </p>
               <div class="testimonial-author">
@@ -1918,33 +1604,118 @@
                 </div>
               </div>
             </div>
+            <div class="testimonial">
+              <p class="testimonial-quote">
+                "99 zł za 9 narzędzi AI? Tyle płacę za jedno ogłoszenie na portalu.
+                Zapisałem się od razu — to się zwróci po pierwszej transakcji."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">TW</div>
+                <div class="author-info">
+                  <div class="author-name">Tomasz W.</div>
+                  <div class="author-role">Pośrednik, Wrocław</div>
+                </div>
+              </div>
+            </div>
           </div>
-          
+
         </div>
       </section>
-      
+
+      <!-- ========== FAQ ========== -->
+      <section class="section faq-section" id="faq">
+        <div class="container">
+
+          <h2>Najczęstsze pytania</h2>
+
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Kiedy Agentivo będzie dostępne?
+                <span class="faq-chevron">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>Planujemy uruchomienie pierwszych modułów (AI Trener, Smart Maile, Skaner Ofert) w Q2 2026. Osoby z presale dostaną dostęp jako pierwsze.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Co dokładnie dostaję w presale?
+                <span class="faq-chevron">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>Gwarantowaną cenę 99 PLN/mies (zamiast 199 PLN) na zawsze, priorytetowy dostęp do wszystkich 9 narzędzi oraz bezpośredni kontakt z zespołem. Płatność dopiero po uruchomieniu produktu.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Czy mogę zrezygnować z presale?
+                <span class="faq-chevron">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>Tak, w każdym momencie. Zapis na presale jest darmowy i niezobowiązujący — to tylko rezerwacja ceny i miejsca. Płatność rusza dopiero po premierze.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Czy muszę teraz płacić?
+                <span class="faq-chevron">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>Nie. Zapis jest całkowicie darmowy. Zostawiasz tylko e-mail, żeby zarezerwować cenę presale. Pierwsza płatność dopiero gdy produkt będzie gotowy i zdecydujesz się aktywować konto.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Czy 99 PLN to za wszystkie 9 narzędzi?
+                <span class="faq-chevron">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>Tak. W cenie presale 99 PLN/mies dostajesz dostęp do pełnego pakietu — wszystkie 9 narzędzi AI bez dodatkowych opłat. Po zakończeniu presale cena wzrośnie do 199 PLN/mies.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       <!-- ========== FINAL CTA ========== -->
       <section class="section final-cta" id="zapisz-sie">
         <div class="container">
-          
-          <h2>Presale: <span class="price-old">199 PLN</span> <span class="gradient-text">99 PLN/mies</span></h2>
+
+          <h2>Zapisz się na presale: <span class="gradient-text">99 PLN/mies na zawsze</span></h2>
           <p class="final-cta-subtitle">
-            Dołącz teraz — cena presale zostaje z Tobą na zawsze.
+            Darmowy zapis. Płatność dopiero po premierze. Rezygnacja w dowolnym momencie.
           </p>
 
           <div class="form-wrapper" id="formWrapper">
-            <form class="form" id="waitlistForm">
+            <form class="form" id="waitlistForm" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+              <input type="hidden" name="subject" value="Nowy zapis na presale Agentivo">
+              <input type="hidden" name="from_name" value="Agentivo Presale">
+              <input type="checkbox" name="botcheck" style="display: none;">
               <input
                 type="email"
+                name="email"
                 class="input"
                 placeholder="Twój adres e-mail"
                 required
                 id="emailInput"
               />
-              <button type="submit" class="btn-submit">Kupuję w presale — 99 PLN/mies →</button>
+              <button type="submit" class="btn-submit" id="submitBtn">Zapisuję się na presale →</button>
             </form>
 
             <div class="form-benefits">
+              <div class="form-benefit">
+                <span class="check-icon">✓</span>
+                Darmowy zapis
+              </div>
               <div class="form-benefit">
                 <span class="check-icon">✓</span>
                 -50% na zawsze
@@ -1955,39 +1726,79 @@
               </div>
               <div class="form-benefit">
                 <span class="check-icon">✓</span>
-                Rezygnacja w dowolnym momencie
+                Rezygnacja bez zobowiązań
               </div>
             </div>
-            
+
             <div class="success-message">
-              ✅ Świetnie! Jesteś na liście. Odezwiemy się wkrótce.
+              Gotowe! Zarezerwowaliśmy Twoje miejsce w presale. Odezwiemy się przed premierą.
+            </div>
+            <div class="error-message" id="errorMsg">
+              Coś poszło nie tak. Spróbuj ponownie lub napisz na kontakt@agentivo.pl
             </div>
           </div>
-          
+
         </div>
       </section>
-      
+
       <!-- Footer -->
       <footer class="footer">
-        © 2026 Agentivo. Wszystkie prawa zastrzeżone.
+        &copy; 2026 Agentivo. Wszystkie prawa zastrzeżone.
       </footer>
-      
+
     </div>
 
     <script>
+      // Web3Forms submission
       const form = document.getElementById('waitlistForm');
       const formWrapper = document.getElementById('formWrapper');
+      const submitBtn = document.getElementById('submitBtn');
 
-      form.addEventListener('submit', function(e) {
+      form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const email = document.getElementById('emailInput').value;
 
-        if (window.va) {
-          window.va('event', { name: 'presale_submit', data: { email, price: 99 } });
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Wysyłam...';
+        formWrapper.classList.remove('error');
+
+        try {
+          const formData = new FormData(form);
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            if (window.va) {
+              window.va('event', { name: 'presale_signup', data: { email: formData.get('email') } });
+            }
+            formWrapper.classList.add('success');
+          } else {
+            formWrapper.classList.add('error');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Zapisuję się na presale →';
+          }
+        } catch (error) {
+          formWrapper.classList.add('error');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Zapisuję się na presale →';
         }
+      });
 
-        console.log('Presale email:', email);
-        formWrapper.classList.add('success');
+      // FAQ accordion
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const isActive = item.classList.contains('active');
+
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
       });
     </script>
 
