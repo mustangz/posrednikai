@@ -1,0 +1,958 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ankieta — Agentivo | Które narzędzia AI chcesz jako pierwsze?</title>
+    <meta name="description" content="Pomóż nam wybrać, które narzędzia AI dla pośredników nieruchomości uruchomimy jako pierwsze." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%238b5cf6'/><text x='50' y='68' font-size='60' font-weight='800' text-anchor='middle' fill='white'>A</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: #0a0a12;
+        color: white;
+        overflow-x: hidden;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .bg-animation {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(100px);
+        mix-blend-mode: screen;
+        opacity: 0.6;
+      }
+
+      .orb-1 {
+        width: 600px; height: 600px;
+        background: rgba(139, 92, 246, 0.25);
+        top: -200px; left: -200px;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .orb-2 {
+        width: 500px; height: 500px;
+        background: rgba(59, 130, 246, 0.2);
+        top: 50%; right: -150px;
+        animation: float 10s ease-in-out infinite reverse;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-30px) rotate(5deg); }
+      }
+
+      .content {
+        position: relative;
+        z-index: 10;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 0.75rem 1.5rem;
+        background: rgba(10, 10, 18, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .navbar-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: white;
+      }
+
+      .navbar-logo-icon {
+        width: 32px; height: 32px;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.875rem;
+      }
+
+      .navbar-logo-text {
+        font-size: 1.125rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .navbar-back {
+        font-size: 0.8125rem;
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .navbar-back:hover { color: white; }
+
+      /* Header */
+      .survey-header {
+        text-align: center;
+        padding: 4rem 0 3rem;
+      }
+
+      .survey-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.375rem 1rem;
+        background: rgba(139, 92, 246, 0.12);
+        border: 1px solid rgba(139, 92, 246, 0.25);
+        border-radius: 100px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #c4b5fd;
+        margin-bottom: 1.5rem;
+      }
+
+      .survey-header h1 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 900;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin-bottom: 1rem;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #22d3ee 0%, #818cf8 50%, #c084fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .survey-subtitle {
+        font-size: 1.0625rem;
+        color: #9ca3af;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+
+      /* Form sections */
+      .survey-section {
+        margin-bottom: 3rem;
+      }
+
+      .survey-section-label {
+        font-size: 0.6875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #8b5cf6;
+        margin-bottom: 0.5rem;
+      }
+
+      .survey-section h2 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin-bottom: 0.375rem;
+        letter-spacing: -0.02em;
+      }
+
+      .survey-section-desc {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-bottom: 1.25rem;
+      }
+
+      /* Module cards (checkboxes) */
+      .module-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+      }
+
+      .module-option {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .module-option input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .module-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        transition: all 0.2s;
+      }
+
+      .module-card:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(139, 92, 246, 0.3);
+      }
+
+      .module-option input:checked + .module-card {
+        background: rgba(139, 92, 246, 0.1);
+        border-color: rgba(139, 92, 246, 0.5);
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+      }
+
+      .module-checkbox {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+      }
+
+      .module-option input:checked + .module-card .module-checkbox {
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        border-color: transparent;
+      }
+
+      .module-checkbox svg {
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+
+      .module-option input:checked + .module-card .module-checkbox svg {
+        opacity: 1;
+      }
+
+      .module-icon {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      .module-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .module-name {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        margin-bottom: 0.125rem;
+      }
+
+      .module-desc {
+        font-size: 0.75rem;
+        color: #6b7280;
+        line-height: 1.4;
+      }
+
+      /* Radio cards (single select) */
+      .radio-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+      }
+
+      .radio-option {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .radio-option input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .radio-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        transition: all 0.2s;
+      }
+
+      .radio-card:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(139, 92, 246, 0.3);
+      }
+
+      .radio-option input:checked + .radio-card {
+        background: rgba(139, 92, 246, 0.1);
+        border-color: rgba(139, 92, 246, 0.5);
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+      }
+
+      .radio-dot {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+      }
+
+      .radio-option input:checked + .radio-card .radio-dot {
+        border-color: #8b5cf6;
+      }
+
+      .radio-dot-inner {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.2s;
+      }
+
+      .radio-option input:checked + .radio-card .radio-dot-inner {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Budget options */
+      .budget-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.625rem;
+      }
+
+      @media (max-width: 480px) {
+        .budget-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .budget-card {
+        text-align: center;
+        padding: 1.25rem 1rem;
+      }
+
+      .budget-amount {
+        font-size: 1rem;
+        font-weight: 800;
+        margin-bottom: 0.125rem;
+      }
+
+      .budget-label {
+        font-size: 0.6875rem;
+        color: #6b7280;
+      }
+
+      /* Email field */
+      .email-section {
+        margin-bottom: 2.5rem;
+      }
+
+      .email-input {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        color: white;
+        font-size: 1rem;
+        font-family: inherit;
+        outline: none;
+        transition: all 0.2s;
+      }
+
+      .email-input::placeholder {
+        color: #4b5563;
+      }
+
+      .email-input:focus {
+        border-color: rgba(139, 92, 246, 0.5);
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+      }
+
+      .email-hint {
+        font-size: 0.75rem;
+        color: #4b5563;
+        margin-top: 0.5rem;
+      }
+
+      /* Submit */
+      .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 1.125rem 2rem;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        border: none;
+        border-radius: 14px;
+        color: white;
+        font-size: 1.0625rem;
+        font-weight: 800;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 4px 24px rgba(139, 92, 246, 0.35);
+        letter-spacing: -0.01em;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(139, 92, 246, 0.5);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      /* Success state */
+      .success-screen {
+        display: none;
+        text-align: center;
+        padding: 4rem 1rem;
+      }
+
+      .success-screen.visible {
+        display: block;
+      }
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 1.5rem;
+        box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+      }
+
+      .success-screen h2 {
+        font-size: 1.75rem;
+        font-weight: 900;
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.02em;
+      }
+
+      .success-screen p {
+        color: #9ca3af;
+        font-size: 1.0625rem;
+        margin-bottom: 2rem;
+      }
+
+      .success-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 2rem;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        transition: all 0.2s;
+      }
+
+      .success-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Validation */
+      .error-msg {
+        font-size: 0.8125rem;
+        color: #f87171;
+        margin-top: 0.5rem;
+        display: none;
+      }
+
+      .error-msg.visible {
+        display: block;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .survey-header { animation: fadeInUp 0.6s ease-out; }
+      .survey-section:nth-child(1) { animation: fadeInUp 0.6s ease-out 0.1s both; }
+      .survey-section:nth-child(2) { animation: fadeInUp 0.6s ease-out 0.2s both; }
+      .survey-section:nth-child(3) { animation: fadeInUp 0.6s ease-out 0.3s both; }
+
+      /* Progress bar */
+      .progress-bar {
+        height: 3px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 3px;
+        margin-bottom: 3rem;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #8b5cf6, #6366f1);
+        border-radius: 3px;
+        width: 0%;
+        transition: width 0.4s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-animation">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="/" class="navbar-logo">
+          <div class="navbar-logo-icon">A</div>
+          <span class="navbar-logo-text">Agentivo</span>
+        </a>
+        <a href="/" class="navbar-back">← Wróć na stronę</a>
+      </div>
+    </nav>
+
+    <div class="content">
+
+      <div class="survey-header">
+        <div class="survey-badge">📋 Ankieta — 30 sekund</div>
+        <h1>Które narzędzia <span class="gradient-text">chcesz jako pierwsze?</span></h1>
+        <p class="survey-subtitle">Budujemy Agentivo pod Twoje potrzeby. Zaznacz moduły, które najbardziej Ci się przydadzą — zaczniemy od nich.</p>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <form id="surveyForm">
+
+        <!-- Q1: Które moduły Cię interesują? (multi-select) -->
+        <div class="survey-section">
+          <div class="survey-section-label">Pytanie 1 z 3</div>
+          <h2>Które moduły Cię interesują?</h2>
+          <p class="survey-section-desc">Zaznacz wszystkie, które chciałbyś mieć w swoim pakiecie.</p>
+
+          <div class="module-grid">
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="WnętrzeAI — Virtual Staging" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">🏠</span>
+                <div class="module-info">
+                  <div class="module-name">WnętrzeAI — Virtual Staging</div>
+                  <div class="module-desc">Wirtualne umeblowanie pustych wnętrz za pomocą AI</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="Skaner Cen Transakcyjnych" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">📊</span>
+                <div class="module-info">
+                  <div class="module-name">Skaner Cen Transakcyjnych</div>
+                  <div class="module-desc">Realne ceny z aktów notarialnych zamiast ofertowych</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="Skaner Ofert Konkurencji" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">🔍</span>
+                <div class="module-info">
+                  <div class="module-name">Skaner Ofert Konkurencji</div>
+                  <div class="module-desc">Monitoring nowych ofert z portali w czasie rzeczywistym</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="Asystent Dokumentów" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">📋</span>
+                <div class="module-info">
+                  <div class="module-name">Asystent Dokumentów</div>
+                  <div class="module-desc">Checklista dokumentów — starostwo, gmina, sąd</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="WhatsApp Bot" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">💬</span>
+                <div class="module-info">
+                  <div class="module-name">WhatsApp Bot</div>
+                  <div class="module-desc">Komunikacja z Agentivo przez WhatsApp</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="Skaner KW Konkurencji" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">📖</span>
+                <div class="module-info">
+                  <div class="module-name">Skaner KW Konkurencji</div>
+                  <div class="module-desc">Monitoring zmian w księgach wieczystych konkurencji</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="Smart Maile" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">✉️</span>
+                <div class="module-info">
+                  <div class="module-name">Smart Maile</div>
+                  <div class="module-desc">Automatyczne follow-upy i sekwencje mailowe</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="Voice Notes AI" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">🎙️</span>
+                <div class="module-info">
+                  <div class="module-name">Voice Notes AI</div>
+                  <div class="module-desc">Nagrywaj notatki głosowe — AI zamienia je w raporty</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="Smart CRM" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">📇</span>
+                <div class="module-info">
+                  <div class="module-name">Smart CRM</div>
+                  <div class="module-desc">CRM z AI scoring klientów i automatycznymi zadaniami</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="module-option">
+              <input type="checkbox" name="modules" value="AI Trener Negocjacji" />
+              <div class="module-card">
+                <div class="module-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <span class="module-icon">🥊</span>
+                <div class="module-info">
+                  <div class="module-name">AI Trener Negocjacji</div>
+                  <div class="module-desc">Symulacje negocjacji z klientami — ćwicz bez ryzyka</div>
+                </div>
+              </div>
+            </label>
+
+          </div>
+          <p class="error-msg" id="modulesError">Zaznacz przynajmniej jeden moduł.</p>
+        </div>
+
+        <!-- Q2: Który moduł jako pierwszy? (single select) -->
+        <div class="survey-section">
+          <div class="survey-section-label">Pytanie 2 z 3</div>
+          <h2>Który moduł chcesz jako pierwszy?</h2>
+          <p class="survey-section-desc">Gdybyśmy mieli uruchomić tylko jeden — który to powinien być?</p>
+
+          <div class="radio-grid">
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="WnętrzeAI — Virtual Staging" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">🏠</span>
+                <span class="module-name">WnętrzeAI — Virtual Staging</span>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="Skaner Cen Transakcyjnych" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">📊</span>
+                <span class="module-name">Skaner Cen Transakcyjnych</span>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="Skaner Ofert Konkurencji" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">🔍</span>
+                <span class="module-name">Skaner Ofert Konkurencji</span>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="Asystent Dokumentów" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">📋</span>
+                <span class="module-name">Asystent Dokumentów</span>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="WhatsApp Bot" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">💬</span>
+                <span class="module-name">WhatsApp Bot</span>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="Skaner KW Konkurencji" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">📖</span>
+                <span class="module-name">Skaner KW Konkurencji</span>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="Smart Maile" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">✉️</span>
+                <span class="module-name">Smart Maile</span>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="Voice Notes AI" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">🎙️</span>
+                <span class="module-name">Voice Notes AI</span>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="Smart CRM" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">📇</span>
+                <span class="module-name">Smart CRM</span>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="first_module" value="AI Trener Negocjacji" />
+              <div class="radio-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <span class="module-icon">🥊</span>
+                <span class="module-name">AI Trener Negocjacji</span>
+              </div>
+            </label>
+          </div>
+          <p class="error-msg" id="firstError">Wybierz jeden moduł.</p>
+        </div>
+
+        <!-- Q3: Budżet -->
+        <div class="survey-section">
+          <div class="survey-section-label">Pytanie 3 z 3</div>
+          <h2>Ile płacisz miesięcznie za narzędzia do pracy?</h2>
+          <p class="survey-section-desc">CRM, portale, reklama, subskrypcje — wszystko razem.</p>
+
+          <div class="budget-grid">
+            <label class="radio-option">
+              <input type="radio" name="budget" value="0-100 PLN" />
+              <div class="radio-card budget-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <div>
+                  <div class="budget-amount">0 – 100 zł</div>
+                  <div class="budget-label">Minimum</div>
+                </div>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="budget" value="100-300 PLN" />
+              <div class="radio-card budget-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <div>
+                  <div class="budget-amount">100 – 300 zł</div>
+                  <div class="budget-label">Standardowo</div>
+                </div>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="budget" value="300-500 PLN" />
+              <div class="radio-card budget-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <div>
+                  <div class="budget-amount">300 – 500 zł</div>
+                  <div class="budget-label">Powyżej średniej</div>
+                </div>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="budget" value="500+ PLN" />
+              <div class="radio-card budget-card">
+                <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+                <div>
+                  <div class="budget-amount">500+ zł</div>
+                  <div class="budget-label">Inwestuję w narzędzia</div>
+                </div>
+              </div>
+            </label>
+          </div>
+          <p class="error-msg" id="budgetError">Wybierz jedną opcję.</p>
+        </div>
+
+        <!-- Email (optional) -->
+        <div class="email-section">
+          <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.75rem; letter-spacing: -0.02em;">Twój e-mail <span style="color: #4b5563; font-weight: 500;">(opcjonalnie)</span></h2>
+          <input type="email" name="email" class="email-input" placeholder="jan@example.com" />
+          <p class="email-hint">Podaj, jeśli chcesz dostać wyniki ankiety i info o premierze.</p>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Wyślij ankietę →</button>
+
+      </form>
+
+      <!-- Success -->
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon">🎉</div>
+        <h2>Dzięki za odpowiedzi!</h2>
+        <p>Twój głos pomoże nam zbudować Agentivo dokładnie pod potrzeby pośredników.</p>
+        <a href="/" class="success-link">← Wróć na stronę Agentivo</a>
+      </div>
+
+    </div>
+
+    <script>
+      const form = document.getElementById('surveyForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const successScreen = document.getElementById('successScreen');
+      const progressFill = document.getElementById('progressFill');
+
+      // Progress bar
+      function updateProgress() {
+        const modules = document.querySelectorAll('input[name="modules"]:checked').length > 0;
+        const first = document.querySelector('input[name="first_module"]:checked');
+        const budget = document.querySelector('input[name="budget"]:checked');
+        let progress = 0;
+        if (modules) progress += 33;
+        if (first) progress += 33;
+        if (budget) progress += 34;
+        progressFill.style.width = progress + '%';
+      }
+
+      document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('change', updateProgress);
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Validation
+        const modulesChecked = document.querySelectorAll('input[name="modules"]:checked');
+        const firstModule = document.querySelector('input[name="first_module"]:checked');
+        const budget = document.querySelector('input[name="budget"]:checked');
+
+        let valid = true;
+
+        document.getElementById('modulesError').classList.toggle('visible', modulesChecked.length === 0);
+        if (modulesChecked.length === 0) valid = false;
+
+        document.getElementById('firstError').classList.toggle('visible', !firstModule);
+        if (!firstModule) valid = false;
+
+        document.getElementById('budgetError').classList.toggle('visible', !budget);
+        if (!budget) valid = false;
+
+        if (!valid) return;
+
+        // Collect data
+        const selectedModules = Array.from(modulesChecked).map(cb => cb.value);
+        const email = form.querySelector('input[name="email"]').value;
+
+        const formData = new FormData();
+        formData.append('access_key', 'YOUR_WEB3FORMS_KEY');
+        formData.append('subject', 'Ankieta Agentivo — nowa odpowiedź');
+        formData.append('from_name', 'Agentivo Ankieta');
+        formData.append('Interesujące moduły', selectedModules.join(', '));
+        formData.append('Moduł jako pierwszy', firstModule.value);
+        formData.append('Budżet miesięczny', budget.value);
+        if (email) formData.append('Email', email);
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Wysyłam...';
+
+        try {
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+          });
+
+          if (response.ok) {
+            form.style.display = 'none';
+            document.querySelector('.progress-bar').style.display = 'none';
+            successScreen.classList.add('visible');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (window.va) {
+              window.va('event', { name: 'survey_complete', data: {
+                modules: selectedModules.join(','),
+                first: firstModule.value,
+                budget: budget.value
+              }});
+            }
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (err) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Wyślij ankietę →';
+          alert('Coś poszło nie tak. Spróbuj ponownie.');
+        }
+      });
+    </script>
+  </body>
+</html>
