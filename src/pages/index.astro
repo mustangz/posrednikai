@@ -7,9 +7,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agentivo — Zamykaj 40% więcej transakcji | AI dla Pośredników</title>
-    <meta name="description" content="9 narzędzi AI dla pośredników nieruchomości. Follow-upy, skaner ofert, AI trener negocjacji, virtual staging, monitoring KW i więcej. Presale -50%: 99 PLN/mies." />
+    <meta name="description" content="10 narzędzi AI dla pośredników nieruchomości. Follow-upy, skaner ofert, AI trener negocjacji, virtual staging, monitoring KW i więcej. Zapisz się na przedsprzedaż!" />
     <meta property="og:title" content="Agentivo — AI dla Pośredników Nieruchomości" />
-    <meta property="og:description" content="9 narzędzi AI: follow-upy, skaner ofert, trener negocjacji, virtual staging. Presale -50%: 99 PLN/mies." />
+    <meta property="og:description" content="10 narzędzi AI: follow-upy, skaner ofert, trener negocjacji, virtual staging. Zapisz się na przedsprzedaż!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://agentivo.pl" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -803,6 +803,26 @@
         padding: 1rem 2rem;
       }
 
+      /* ========== SKANER CEN MOCKUP ========== */
+      .ceny-mockup { padding: 0; overflow: hidden; }
+      .ceny-ui { display: flex; flex-direction: column; height: 100%; }
+      .ceny-header-bar { display: flex; align-items: center; justify-content: space-between; padding: 0.625rem 1rem; background: rgba(16,185,129,0.08); border-bottom: 1px solid rgba(16,185,129,0.15); }
+      .ceny-header-title { font-size: 0.6875rem; font-weight: 700; color: #d1d5db; }
+      .ceny-header-badge { font-size: 0.4375rem; font-weight: 700; padding: 0.15rem 0.4rem; background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.35); border-radius: 3px; color: #6ee7b7; }
+      .ceny-avg { display: flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 0.75rem; background: rgba(16,185,129,0.05); }
+      .ceny-avg-value { font-size: 1.25rem; font-weight: 800; color: #6ee7b7; }
+      .ceny-avg-label { font-size: 0.5rem; color: #6b7280; }
+      .ceny-avg-trend { display: flex; align-items: center; gap: 0.25rem; font-size: 0.5625rem; font-weight: 700; color: #f87171; }
+      .ceny-avg-trend.up { color: #6ee7b7; }
+      .ceny-transactions { flex: 1; display: flex; flex-direction: column; gap: 0.25rem; padding: 0.5rem 0.625rem; overflow: hidden; }
+      .ceny-tx { display: flex; align-items: center; justify-content: space-between; padding: 0.375rem 0.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 5px; }
+      .ceny-tx-addr { font-size: 0.5625rem; color: #9ca3af; font-weight: 500; }
+      .ceny-tx-meta { font-size: 0.4375rem; color: #4b5563; }
+      .ceny-tx-price { text-align: right; }
+      .ceny-tx-total { font-size: 0.5625rem; font-weight: 700; color: #d1d5db; }
+      .ceny-tx-m2 { font-size: 0.4375rem; color: #6ee7b7; font-weight: 600; }
+      .ceny-footer { padding: 0.5rem 1rem; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.5rem; color: #4b5563; text-align: center; }
+
       /* ========== CRM MOCKUP ========== */
       .crm-mockup { padding: 1rem; }
       .crm-pipeline { display: flex; gap: 0.5rem; width: 100%; height: 100%; }
@@ -1280,7 +1300,7 @@
             <a href="#opinie">Opinie</a>
             <a href="#faq">FAQ</a>
           </div>
-          <a href="#zapisz-sie" class="navbar-cta">Zapisz się na presale →</a>
+          <a href="#zapisz-sie" class="navbar-cta">Zapisz się →</a>
         </div>
       </nav>
 
@@ -1299,22 +1319,22 @@
           </h1>
 
           <p class="hero-subtitle">
-            9 narzędzi AI dla pośredników — od follow-upów i trenera negocjacji,
+            10 narzędzi AI dla pośredników — od follow-upów i trenera negocjacji,
             przez virtual staging, po monitoring ksiąg wieczystych. Ty zamykasz transakcje.
           </p>
 
           <a href="#zapisz-sie" class="cta-primary">
-            Zapisz się na presale — 99 PLN/mies
+            Zapisz się na przedsprzedaż
             <span class="cta-arrow">→</span>
           </a>
 
           <p class="cta-subtext">
-            <span class="price-old">199 PLN/mies</span> <strong>99 PLN/mies</strong> — cena presale zostaje z Tobą na zawsze
+            Darmowy zapis. Płatność dopiero po premierze. Bądź pierwszy.
           </p>
 
           <div class="urgency-badge">
             <span class="urgency-dot"></span>
-            Zostało <strong>73 z 200</strong> miejsc w cenie presale
+            Zostało <strong>73 z 200</strong> miejsc w przedsprzedaży
           </div>
 
         </div>
@@ -1359,59 +1379,68 @@
         </div>
       </section>
 
-      <!-- ========== ALL 9 SOLUTIONS ========== -->
+      <!-- ========== SOLUTIONS 1-3 (HOT) ========== -->
       <section class="section solution-section" id="funkcje">
         <div class="container">
 
           <h2>Więcej prowizji. Mniej godzin pracy.</h2>
           <p class="solution-intro">
-            9 narzędzi AI, które pracują na Twoje wyniki 24/7.
+            10 narzędzi AI, które pracują na Twoje wyniki 24/7.
           </p>
 
           <div class="solutions">
 
-            <!-- 1. AI Trener -->
+            <!-- 1. WnętrzeAI (HOT) -->
             <div class="solution-card">
               <div class="solution-content">
-                <div class="solution-label"><span class="solution-label-icon">🎯</span> AI Trener Negocjacji</div>
-                <h3>Ćwicz 100 scenariuszy, zanim spotkasz klienta</h3>
-                <p>Symuluj najtrudniejsze rozmowy z AI. "Za drogo", "muszę się zastanowić", "znalazłem tańsze" — przećwicz wszystko i idź na spotkanie pewny swoich argumentów.</p>
+                <div class="solution-label"><span class="solution-label-icon">🏠</span> WnętrzeAI — Virtual Staging</div>
+                <h3>Puste mieszkanie urządzone w 30 sekund</h3>
+                <p>AI dodaje meble i dekoracje do zdjęć pustych wnętrz. Ogłoszenie wygląda jak z katalogu — bez wydawania 3–8 tys. PLN na tradycyjny staging. Więcej zapytań, szybsza sprzedaż.</p>
                 <div class="solution-result">
-                  <div class="result-icon">📈</div>
-                  <div class="result-text">+40% skuteczność negocjacji<span>Średni wynik beta-testerów</span></div>
+                  <div class="result-icon">📸</div>
+                  <div class="result-text">+40% więcej zapytań na ogłoszenie<span>49 PLN za render zamiast 3–8 tys. za staging</span></div>
                 </div>
               </div>
               <div class="solution-visual">
-                <div class="visual-mockup trener-mockup">
-                  <div class="trener-chat">
-                    <div class="trener-msg trener-msg-client"><div class="trener-sender">Klient (symulacja)</div>Panie Marku, to jest za drogo. Widziałem podobne mieszkanie za 50 tys. mniej.</div>
-                    <div class="trener-msg trener-msg-ai"><div class="trener-sender">AI podpowiedź</div>Rozumiem. Sprawdźmy razem — tamta oferta nie ma balkonu ani miejsca parkingowego. Gdy dodamy te elementy, różnica spada do 8 tys.</div>
-                    <div class="trener-msg trener-msg-client"><div class="trener-sender">Klient (symulacja)</div>Hmm, faktycznie nie pomyślałem o parkingu...</div>
-                    <div class="trener-score">Twój wynik: 87/100 — Doskonała odpowiedź na obiekcję cenową</div>
+                <div class="visual-mockup staging-mockup">
+                  <div class="staging-ui">
+                    <div class="staging-before"><div class="staging-label-tag">PRZED</div><div class="staging-room"><div class="staging-wall"></div><div class="staging-floor"></div><div class="staging-window"></div></div></div>
+                    <div class="staging-divider"><div class="staging-divider-line"></div><div class="staging-divider-icon">✨</div><div class="staging-divider-line"></div></div>
+                    <div class="staging-after"><div class="staging-label-tag staging-label-after">PO</div><div class="staging-room staging-room-furnished"><div class="staging-wall"></div><div class="staging-floor"></div><div class="staging-window"></div><div class="staging-sofa"></div><div class="staging-table"></div><div class="staging-plant"></div></div></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- 2. Smart Maile -->
+            <!-- 2. Skaner Cen Transakcyjnych (HOT, NEW) -->
             <div class="solution-card">
               <div class="solution-content">
-                <div class="solution-label"><span class="solution-label-icon">✉️</span> Smart Maile</div>
-                <h3>50 spersonalizowanych follow-upów dziennie. 0 Twojego czasu.</h3>
-                <p>AI pisze maile w Twoim stylu, dopasowane do każdego klienta. Ty tylko zatwierdzasz jednym klikiem. Żaden lead nie zostanie zapomniany.</p>
+                <div class="solution-label"><span class="solution-label-icon">💲</span> Skaner Cen Transakcyjnych</div>
+                <h3>Znaj realną cenę — nie ofertową, a transakcyjną</h3>
+                <p>AI agreguje dane z aktów notarialnych i rejestrów cen. Sprawdź ile faktycznie zapłacono za mieszkania w danej lokalizacji — z dokładnością do ulicy. Koniec z gdybaniem, argumentuj cenę twardymi danymi.</p>
                 <div class="solution-result">
-                  <div class="result-icon">⏱️</div>
-                  <div class="result-text">8 godzin tygodniowo oszczędności<span>Na samych mailach i follow-upach</span></div>
+                  <div class="result-icon">📊</div>
+                  <div class="result-text">Realne ceny transakcyjne z aktów notarialnych<span>Średnia cena m² z dokładnością do dzielnicy</span></div>
                 </div>
               </div>
               <div class="solution-visual">
-                <div class="visual-mockup maile-mockup">
-                  <div class="maile-ui">
-                    <div class="maile-header"><div class="maile-to">Do: <strong>anna.kowalska@gmail.com</strong></div><div class="maile-badge-auto">AI DRAFT</div></div>
-                    <div class="maile-subject">Re: Mieszkanie przy ul. Kwiatowej — follow-up</div>
-                    <div class="maile-body">Dzień dobry Pani Anno,<br><br>Dziękuję za prezentację mieszkania na <span class="highlight">ul. Kwiatowej</span>. Zauważyłem, że interesowała Panią <span class="highlight">przestronna kuchnia</span> — mam jeszcze 2 podobne oferty w tej okolicy...</div>
-                    <div class="maile-actions"><div class="maile-btn maile-btn-send">Wyślij</div><div class="maile-btn maile-btn-edit">Edytuj</div></div>
-                    <div class="maile-queue">+12 follow-upów w kolejce na dziś</div>
+                <div class="visual-mockup ceny-mockup">
+                  <div class="ceny-ui">
+                    <div class="ceny-header-bar"><span class="ceny-header-title">Ceny transakcyjne — Opole, Zaodrze</span><span class="ceny-header-badge">Q4 2025</span></div>
+                    <div class="ceny-avg">
+                      <div>
+                        <div class="ceny-avg-value">8 420 zł/m²</div>
+                        <div class="ceny-avg-label">średnia cena transakcyjna</div>
+                      </div>
+                      <div class="ceny-avg-trend up">▲ +4.2% r/r</div>
+                    </div>
+                    <div class="ceny-transactions">
+                      <div class="ceny-tx"><div><div class="ceny-tx-addr">ul. Plebiscytowa 3/7</div><div class="ceny-tx-meta">48m² · 2 pok. · XII 2025</div></div><div class="ceny-tx-price"><div class="ceny-tx-total">412 000 zł</div><div class="ceny-tx-m2">8 583 zł/m²</div></div></div>
+                      <div class="ceny-tx"><div><div class="ceny-tx-addr">ul. Reymonta 15/22</div><div class="ceny-tx-meta">63m² · 3 pok. · XI 2025</div></div><div class="ceny-tx-price"><div class="ceny-tx-total">520 000 zł</div><div class="ceny-tx-m2">8 254 zł/m²</div></div></div>
+                      <div class="ceny-tx"><div><div class="ceny-tx-addr">ul. Ozimska 41/3</div><div class="ceny-tx-meta">37m² · 1 pok. · XI 2025</div></div><div class="ceny-tx-price"><div class="ceny-tx-total">308 000 zł</div><div class="ceny-tx-m2">8 324 zł/m²</div></div></div>
+                      <div class="ceny-tx"><div><div class="ceny-tx-addr">ul. Kośnego 8/14</div><div class="ceny-tx-meta">55m² · 2 pok. · X 2025</div></div><div class="ceny-tx-price"><div class="ceny-tx-total">462 000 zł</div><div class="ceny-tx-m2">8 400 zł/m²</div></div></div>
+                    </div>
+                    <div class="ceny-footer">47 transakcji w ostatnich 6 miesiącach</div>
                   </div>
                 </div>
               </div>
@@ -1447,103 +1476,18 @@
       <!-- ========== MID-PAGE CTA 1 ========== -->
       <section class="mid-cta">
         <div class="container">
-          <h3>To dopiero 3 z 9 narzędzi. <span class="gradient-text">Chcesz zobaczyć resztę?</span></h3>
-          <p>Wszystko za 99 PLN/mies w presale — cena zostaje z Tobą na zawsze.</p>
-          <a href="#zapisz-sie" class="cta-primary">Zapisz się na presale →</a>
+          <h3>To dopiero 3 z 10 narzędzi. <span class="gradient-text">Chcesz zobaczyć resztę?</span></h3>
+          <p>Zapisz się za darmo i bądź jednym z pierwszych użytkowników.</p>
+          <a href="#zapisz-sie" class="cta-primary">Zapisz się na przedsprzedaż →</a>
         </div>
       </section>
 
-      <!-- ========== SOLUTIONS 4-6 ========== -->
+      <!-- ========== SOLUTIONS 4-6 (OK) ========== -->
       <section class="section solution-section">
         <div class="container">
           <div class="solutions">
 
-            <!-- 4. Smart CRM -->
-            <div class="solution-card">
-              <div class="solution-content">
-                <div class="solution-label"><span class="solution-label-icon">📊</span> Smart CRM</div>
-                <h3>Każdy klient i transakcja pod kontrolą — bez Excela</h3>
-                <p>Zarządzaj pipeline'em transakcji w jednym widoku. AI automatycznie kategoryzuje klientów, przypomina o follow-upach i podpowiada, który deal ma największą szansę na zamknięcie.</p>
-                <div class="solution-result">
-                  <div class="result-icon">💰</div>
-                  <div class="result-text">Zero zapomnianych klientów<span>Automatyczny pipeline i przypomnienia</span></div>
-                </div>
-              </div>
-              <div class="solution-visual">
-                <div class="visual-mockup crm-mockup">
-                  <div class="crm-pipeline">
-                    <div class="crm-column"><div class="crm-column-header">Nowy</div><div class="crm-deal"></div><div class="crm-deal"></div></div>
-                    <div class="crm-column"><div class="crm-column-header">Prezentacja</div><div class="crm-deal active"></div></div>
-                    <div class="crm-column"><div class="crm-column-header">Zamknięte</div><div class="crm-deal done"></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 5. Voice Notes -->
-            <div class="solution-card">
-              <div class="solution-content">
-                <div class="solution-label"><span class="solution-label-icon">🎙️</span> Voice Notes</div>
-                <h3>Mów zamiast pisać — AI zrobi resztę</h3>
-                <p>Po spotkaniu z klientem nagraj 30-sekundową notatkę głosową. AI transkrybuje ją, wyciąga kluczowe ustalenia i automatycznie aktualizuje kartę klienta w CRM.</p>
-                <div class="solution-result">
-                  <div class="result-icon">🎧</div>
-                  <div class="result-text">30 sek zamiast 10 min notatek<span>Voice-to-text z automatycznym podsumowaniem</span></div>
-                </div>
-              </div>
-              <div class="solution-visual">
-                <div class="visual-mockup voice-mockup">
-                  <div class="voice-ui">
-                    <div class="voice-waveform">
-                      <div class="wave-bar" style="height: 30%;"></div><div class="wave-bar" style="height: 60%;"></div><div class="wave-bar" style="height: 90%;"></div><div class="wave-bar" style="height: 45%;"></div><div class="wave-bar" style="height: 75%;"></div><div class="wave-bar" style="height: 50%;"></div><div class="wave-bar" style="height: 85%;"></div><div class="wave-bar" style="height: 35%;"></div><div class="wave-bar" style="height: 65%;"></div><div class="wave-bar" style="height: 40%;"></div>
-                    </div>
-                    <div class="voice-transcript"><div class="mockup-line"></div><div class="mockup-line"></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 6. WnętrzeAI -->
-            <div class="solution-card">
-              <div class="solution-content">
-                <div class="solution-label"><span class="solution-label-icon">🏠</span> WnętrzeAI — Virtual Staging</div>
-                <h3>Puste mieszkanie urządzone w 30 sekund</h3>
-                <p>AI dodaje meble i dekoracje do zdjęć pustych wnętrz. Ogłoszenie wygląda jak z katalogu — bez wydawania 3–8 tys. PLN na tradycyjny staging. Więcej zapytań, szybsza sprzedaż.</p>
-                <div class="solution-result">
-                  <div class="result-icon">📸</div>
-                  <div class="result-text">+40% więcej zapytań na ogłoszenie<span>49 PLN za render zamiast 3–8 tys. za staging</span></div>
-                </div>
-              </div>
-              <div class="solution-visual">
-                <div class="visual-mockup staging-mockup">
-                  <div class="staging-ui">
-                    <div class="staging-before"><div class="staging-label-tag">PRZED</div><div class="staging-room"><div class="staging-wall"></div><div class="staging-floor"></div><div class="staging-window"></div></div></div>
-                    <div class="staging-divider"><div class="staging-divider-line"></div><div class="staging-divider-icon">✨</div><div class="staging-divider-line"></div></div>
-                    <div class="staging-after"><div class="staging-label-tag staging-label-after">PO</div><div class="staging-room staging-room-furnished"><div class="staging-wall"></div><div class="staging-floor"></div><div class="staging-window"></div><div class="staging-sofa"></div><div class="staging-table"></div><div class="staging-plant"></div></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== MID-PAGE CTA 2 ========== -->
-      <section class="mid-cta">
-        <div class="container">
-          <h3>6 z 9 narzędzi. <span class="gradient-text">Zostały jeszcze 3.</span></h3>
-          <p>Dokumenty, WhatsApp, monitoring KW — kompletny ekosystem AI dla pośrednika.</p>
-          <a href="#zapisz-sie" class="cta-primary">Zapisz się na presale →</a>
-        </div>
-      </section>
-
-      <!-- ========== SOLUTIONS 7-9 ========== -->
-      <section class="section solution-section">
-        <div class="container">
-          <div class="solutions">
-
-            <!-- 7. Asystent Dokumentów -->
+            <!-- 4. Asystent Dokumentów -->
             <div class="solution-card">
               <div class="solution-content">
                 <div class="solution-label"><span class="solution-label-icon">📋</span> Asystent Dokumentów</div>
@@ -1582,7 +1526,7 @@
               </div>
             </div>
 
-            <!-- 8. WhatsApp Bot -->
+            <!-- 5. WhatsApp Bot -->
             <div class="solution-card">
               <div class="solution-content">
                 <div class="solution-label"><span class="solution-label-icon">💬</span> WhatsApp Bot</div>
@@ -1608,7 +1552,7 @@
               </div>
             </div>
 
-            <!-- 9. Skaner KW Konkurencji -->
+            <!-- 6. Skaner KW Konkurencji -->
             <div class="solution-card">
               <div class="solution-content">
                 <div class="solution-label"><span class="solution-label-icon">🔓</span> Skaner KW Konkurencji</div>
@@ -1629,6 +1573,116 @@
                       <div class="kw-entry"><div class="kw-entry-top"><span class="kw-entry-badge kw-badge-sprzedaz">SPRZEDAŻ</span><span class="kw-entry-date">2 dni temu</span></div><div class="kw-entry-kw">OP1O/00076892/1</div><div class="kw-entry-detail">Akt notarialny — Plebiscytowa 3/7</div></div>
                     </div>
                     <div class="kw-footer"><span>23 zmiany w tym tygodniu</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== MID-PAGE CTA 2 ========== -->
+      <section class="mid-cta">
+        <div class="container">
+          <h3>6 z 10 narzędzi. <span class="gradient-text">Zostały jeszcze 4.</span></h3>
+          <p>Maile, notatki głosowe, CRM i trener negocjacji — kompletny ekosystem.</p>
+          <a href="#zapisz-sie" class="cta-primary">Zapisz się na przedsprzedaż →</a>
+        </div>
+      </section>
+
+      <!-- ========== SOLUTIONS 7-10 (MEH last) ========== -->
+      <section class="section solution-section">
+        <div class="container">
+          <div class="solutions">
+
+            <!-- 7. Smart Maile -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label"><span class="solution-label-icon">✉️</span> Smart Maile</div>
+                <h3>50 spersonalizowanych follow-upów dziennie. 0 Twojego czasu.</h3>
+                <p>AI pisze maile w Twoim stylu, dopasowane do każdego klienta. Ty tylko zatwierdzasz jednym klikiem. Żaden lead nie zostanie zapomniany.</p>
+                <div class="solution-result">
+                  <div class="result-icon">⏱️</div>
+                  <div class="result-text">8 godzin tygodniowo oszczędności<span>Na samych mailach i follow-upach</span></div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup maile-mockup">
+                  <div class="maile-ui">
+                    <div class="maile-header"><div class="maile-to">Do: <strong>anna.kowalska@gmail.com</strong></div><div class="maile-badge-auto">AI DRAFT</div></div>
+                    <div class="maile-subject">Re: Mieszkanie przy ul. Kwiatowej — follow-up</div>
+                    <div class="maile-body">Dzień dobry Pani Anno,<br><br>Dziękuję za prezentację mieszkania na <span class="highlight">ul. Kwiatowej</span>. Zauważyłem, że interesowała Panią <span class="highlight">przestronna kuchnia</span> — mam jeszcze 2 podobne oferty w tej okolicy...</div>
+                    <div class="maile-actions"><div class="maile-btn maile-btn-send">Wyślij</div><div class="maile-btn maile-btn-edit">Edytuj</div></div>
+                    <div class="maile-queue">+12 follow-upów w kolejce na dziś</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. Voice Notes -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label"><span class="solution-label-icon">🎙️</span> Voice Notes</div>
+                <h3>Mów zamiast pisać — AI zrobi resztę</h3>
+                <p>Po spotkaniu z klientem nagraj 30-sekundową notatkę głosową. AI transkrybuje ją, wyciąga kluczowe ustalenia i automatycznie aktualizuje kartę klienta w CRM.</p>
+                <div class="solution-result">
+                  <div class="result-icon">🎧</div>
+                  <div class="result-text">30 sek zamiast 10 min notatek<span>Voice-to-text z automatycznym podsumowaniem</span></div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup voice-mockup">
+                  <div class="voice-ui">
+                    <div class="voice-waveform">
+                      <div class="wave-bar" style="height: 30%;"></div><div class="wave-bar" style="height: 60%;"></div><div class="wave-bar" style="height: 90%;"></div><div class="wave-bar" style="height: 45%;"></div><div class="wave-bar" style="height: 75%;"></div><div class="wave-bar" style="height: 50%;"></div><div class="wave-bar" style="height: 85%;"></div><div class="wave-bar" style="height: 35%;"></div><div class="wave-bar" style="height: 65%;"></div><div class="wave-bar" style="height: 40%;"></div>
+                    </div>
+                    <div class="voice-transcript"><div class="mockup-line"></div><div class="mockup-line"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. Smart CRM -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label"><span class="solution-label-icon">📊</span> Smart CRM</div>
+                <h3>Każdy klient i transakcja pod kontrolą — bez Excela</h3>
+                <p>Zarządzaj pipeline'em transakcji w jednym widoku. AI automatycznie kategoryzuje klientów, przypomina o follow-upach i podpowiada, który deal ma największą szansę na zamknięcie.</p>
+                <div class="solution-result">
+                  <div class="result-icon">💰</div>
+                  <div class="result-text">Zero zapomnianych klientów<span>Automatyczny pipeline i przypomnienia</span></div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup crm-mockup">
+                  <div class="crm-pipeline">
+                    <div class="crm-column"><div class="crm-column-header">Nowy</div><div class="crm-deal"></div><div class="crm-deal"></div></div>
+                    <div class="crm-column"><div class="crm-column-header">Prezentacja</div><div class="crm-deal active"></div></div>
+                    <div class="crm-column"><div class="crm-column-header">Zamknięte</div><div class="crm-deal done"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10. AI Trener Negocjacji -->
+            <div class="solution-card">
+              <div class="solution-content">
+                <div class="solution-label"><span class="solution-label-icon">🎯</span> AI Trener Negocjacji</div>
+                <h3>Ćwicz 100 scenariuszy, zanim spotkasz klienta</h3>
+                <p>Symuluj najtrudniejsze rozmowy z AI. "Za drogo", "muszę się zastanowić", "znalazłem tańsze" — przećwicz wszystko i idź na spotkanie pewny swoich argumentów.</p>
+                <div class="solution-result">
+                  <div class="result-icon">📈</div>
+                  <div class="result-text">+40% skuteczność negocjacji<span>Średni wynik beta-testerów</span></div>
+                </div>
+              </div>
+              <div class="solution-visual">
+                <div class="visual-mockup trener-mockup">
+                  <div class="trener-chat">
+                    <div class="trener-msg trener-msg-client"><div class="trener-sender">Klient (symulacja)</div>Panie Marku, to jest za drogo. Widziałem podobne mieszkanie za 50 tys. mniej.</div>
+                    <div class="trener-msg trener-msg-ai"><div class="trener-sender">AI podpowiedź</div>Rozumiem. Sprawdźmy razem — tamta oferta nie ma balkonu ani miejsca parkingowego. Gdy dodamy te elementy, różnica spada do 8 tys.</div>
+                    <div class="trener-msg trener-msg-client"><div class="trener-sender">Klient (symulacja)</div>Hmm, faktycznie nie pomyślałem o parkingu...</div>
+                    <div class="trener-score">Twój wynik: 87/100 — Doskonała odpowiedź na obiekcję cenową</div>
                   </div>
                 </div>
               </div>
@@ -1676,7 +1730,7 @@
             </div>
             <div class="testimonial">
               <p class="testimonial-quote">
-                "99 zł za 9 narzędzi AI? Tyle płacę za jedno ogłoszenie na portalu.
+                "10 narzędzi AI w jednym pakiecie? Tyle płacę za jedno ogłoszenie na portalu.
                 Zapisałem się od razu — to się zwróci po pierwszej transakcji."
               </p>
               <div class="testimonial-author">
@@ -1716,7 +1770,7 @@
                 <span class="faq-chevron">▼</span>
               </button>
               <div class="faq-answer">
-                <p>Gwarantowaną cenę 99 PLN/mies (zamiast 199 PLN) na zawsze, priorytetowy dostęp do wszystkich 9 narzędzi oraz bezpośredni kontakt z zespołem. Płatność dopiero po uruchomieniu produktu.</p>
+                <p>Priorytetowy dostęp do wszystkich 10 narzędzi AI oraz bezpośredni kontakt z zespołem. Płatność dopiero po uruchomieniu produktu — zapis jest darmowy.</p>
               </div>
             </div>
 
@@ -1726,7 +1780,7 @@
                 <span class="faq-chevron">▼</span>
               </button>
               <div class="faq-answer">
-                <p>Tak, w każdym momencie. Zapis na presale jest darmowy i niezobowiązujący — to tylko rezerwacja ceny i miejsca. Płatność rusza dopiero po premierze.</p>
+                <p>Tak, w każdym momencie. Zapis jest darmowy i niezobowiązujący — to tylko rezerwacja miejsca. Płatność rusza dopiero po premierze.</p>
               </div>
             </div>
 
@@ -1736,17 +1790,17 @@
                 <span class="faq-chevron">▼</span>
               </button>
               <div class="faq-answer">
-                <p>Nie. Zapis jest całkowicie darmowy. Zostawiasz tylko e-mail, żeby zarezerwować cenę presale. Pierwsza płatność dopiero gdy produkt będzie gotowy i zdecydujesz się aktywować konto.</p>
+                <p>Nie. Zapis jest całkowicie darmowy. Zostawiasz tylko e-mail, żeby zarezerwować miejsce. Pierwsza płatność dopiero gdy produkt będzie gotowy i zdecydujesz się aktywować konto.</p>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-question">
-                Czy 99 PLN to za wszystkie 9 narzędzi?
+                Czy dostaję wszystkie 10 narzędzi?
                 <span class="faq-chevron">▼</span>
               </button>
               <div class="faq-answer">
-                <p>Tak. W cenie presale 99 PLN/mies dostajesz dostęp do pełnego pakietu — wszystkie 9 narzędzi AI bez dodatkowych opłat. Po zakończeniu presale cena wzrośnie do 199 PLN/mies.</p>
+                <p>Tak. Zapisując się na przedsprzedaż, dostajesz dostęp do pełnego pakietu — wszystkie 10 narzędzi AI bez dodatkowych opłat. Szczegóły cenowe podamy przed startem.</p>
               </div>
             </div>
 
@@ -1759,7 +1813,7 @@
       <section class="section final-cta" id="zapisz-sie">
         <div class="container">
 
-          <h2>Zapisz się na presale: <span class="gradient-text">99 PLN/mies na zawsze</span></h2>
+          <h2>Zapisz się na <span class="gradient-text">przedsprzedaż</span></h2>
           <p class="final-cta-subtitle">
             Darmowy zapis. Płatność dopiero po premierze. Rezygnacja w dowolnym momencie.
           </p>
@@ -1778,7 +1832,7 @@
                 required
                 id="emailInput"
               />
-              <button type="submit" class="btn-submit" id="submitBtn">Zapisuję się na presale →</button>
+              <button type="submit" class="btn-submit" id="submitBtn">Zapisuję się na przedsprzedaż →</button>
             </form>
 
             <div class="form-benefits">
@@ -1788,7 +1842,7 @@
               </div>
               <div class="form-benefit">
                 <span class="check-icon">✓</span>
-                -50% na zawsze
+                Priorytetowy dostęp
               </div>
               <div class="form-benefit">
                 <span class="check-icon">✓</span>
@@ -1801,7 +1855,7 @@
             </div>
 
             <div class="success-message">
-              Gotowe! Zarezerwowaliśmy Twoje miejsce w presale. Odezwiemy się przed premierą.
+              Gotowe! Zarezerwowaliśmy Twoje miejsce. Odezwiemy się przed premierą.
             </div>
             <div class="error-message" id="errorMsg">
               Coś poszło nie tak. Spróbuj ponownie lub napisz na kontakt@agentivo.pl
@@ -1848,12 +1902,12 @@
           } else {
             formWrapper.classList.add('error');
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Zapisuję się na presale →';
+            submitBtn.textContent = 'Zapisuję się na przedsprzedaż →';
           }
         } catch (error) {
           formWrapper.classList.add('error');
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Zapisuję się na presale →';
+          submitBtn.textContent = 'Zapisuję się na przedsprzedaż →';
         }
       });
 
